@@ -1,0 +1,13 @@
+// Recipe Finder Application Styles
+// Modern 2026 Architecture with CSS Layers
+
+// Load utilities (functions, mixins)
+@use "util";
+
+// Load global styles (colors, boilerplate, typography, layout, forms)
+// These are automatically layered internally (@layer reset, @layer global, @layer typography, etc.)
+@use "global";
+
+// Load components (navigation, footer, recipe-card, etc.)
+// These use @layer components internally
+@use "components";

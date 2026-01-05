@@ -1,0 +1,164 @@
+@use "../util" as *;
+
+@layer components {
+    .navigation {
+        background-color: var(--color-surface-primary);
+        border-bottom: 1px solid var(--color-border-primary);
+        position: sticky;
+        top: 0;
+        z-index: var(--z-sticky);
+        backdrop-filter: blur(8px);
+        background-color: oklch(from var(--color-surface-primary) l c h / 0.95);
+
+        &__wrapper {
+            width: 100%;
+            max-width: var(--wrapper-size);
+            margin-inline: auto;
+            padding-inline: var(--wrapper-padding);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: var(--spacing-200);
+        }
+
+        &__logo {
+            font-size: var(--fs-24);
+            font-weight: var(--fw-bold);
+            color: var(--c-primary-600);
+            transition: color var(--transition-fast);
+
+            &:hover {
+                color: var(--c-primary-700);
+            }
+        }
+
+        &__toggle {
+            display: none;
+        }
+
+        &__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: #{rem(5)};
+            cursor: pointer;
+            padding: var(--spacing-100);
+
+            @include breakpoint-max(md) {
+                display: flex;
+            }
+
+            span {
+                display: block;
+                width: #{rem(24)};
+                height: #{rem(3)};
+                background-color: var(--color-text-primary);
+                border-radius: var(--br-5);
+                transition: all var(--transition-base);
+            }
+        }
+
+        &__menu {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-200);
+
+            @include breakpoint-max(md) {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--color-surface-primary);
+                border-bottom: 1px solid var(--color-border-primary);
+                padding: var(--spacing-300);
+                gap: var(--spacing-150);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-#{rem(10)});
+                transition: all var(--transition-base);
+            }
+        }
+
+        &__toggle:checked ~ &__wrapper &__hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(#{rem(6)}, #{rem(6)});
+        }
+
+        &__toggle:checked ~ &__wrapper &__hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &__toggle:checked ~ &__wrapper &__hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(#{rem(6)}, -#{rem(6)});
+        }
+
+        &__toggle:checked ~ &__wrapper &__menu {
+            @include breakpoint-max(md) {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        &__item {
+            &--cta {
+                margin-left: var(--spacing-200);
+
+                @include breakpoint-max(md) {
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        &__link {
+            color: var(--color-text-secondary);
+            font-weight: var(--fw-medium);
+            padding: var(--spacing-100) var(--spacing-150);
+            border-radius: var(--br-10);
+            transition: all var(--transition-fast);
+
+            @include breakpoint-max(md) {
+                display: block;
+                width: 100%;
+            }
+
+            &:hover {
+                color: var(--color-text-primary);
+                background-color: var(--color-surface-hover);
+            }
+
+            &--active {
+                color: var(--c-primary-600);
+                background-color: oklch(from var(--c-primary-600) l c h / 0.1);
+            }
+        }
+
+        &__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-150) var(--spacing-300);
+            background-color: var(--c-primary-600);
+            color: var(--c-white);
+            font-weight: var(--fw-semibold);
+            border-radius: var(--br-10);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+
+            @include breakpoint-max(md) {
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: var(--c-primary-700);
+                transform: translateY(-#{rem(1)});
+                box-shadow: var(--shadow-md);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@use "../util" as *;
+
+@layer components {
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-100);
+        padding: var(--spacing-200) var(--spacing-400);
+        font-size: var(--fs-16);
+        font-weight: var(--fw-semibold);
+        font-family: var(--font-primary);
+        line-height: 1;
+        border-radius: var(--br-10);
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        text-decoration: none;
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Primary variant */
+        &--primary {
+            background-color: var(--c-primary-600);
+            color: var(--c-white);
+
+            &:hover {
+                background-color: var(--c-primary-700);
+                transform: translateY(-#{rem(2)});
+                box-shadow: var(--shadow-md);
+            }
+
+            &:active {
+                transform: translateY(0);
+                box-shadow: var(--shadow-sm);
+            }
+        }
+
+        /* Outline variant */
+        &--outline {
+            background-color: transparent;
+            color: var(--c-primary-600);
+            border: 2px solid var(--c-primary-600);
+
+            &:hover {
+                background-color: var(--c-primary-600);
+                color: var(--c-white);
+                transform: translateY(-#{rem(2)});
+                box-shadow: var(--shadow-md);
+            }
+
+            &:active {
+                transform: translateY(0);
+                box-shadow: var(--shadow-sm);
+            }
+        }
+
+        /* Ghost variant */
+        &--ghost {
+            background-color: transparent;
+            color: var(--color-text-primary);
+
+            &:hover {
+                background-color: var(--color-surface-hover);
+            }
+        }
+
+        /* Sizes */
+        &--sm {
+            padding: var(--spacing-100) var(--spacing-200);
+            font-size: var(--fs-14);
+        }
+
+        &--lg {
+            padding: var(--spacing-250) var(--spacing-500);
+            font-size: var(--fs-18);
+        }
+
+        /* Full width */
+        &--block {
+            width: 100%;
+        }
+    }
+}

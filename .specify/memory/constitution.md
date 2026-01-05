@@ -25,6 +25,7 @@ Follow-up: None
 ### I. Clean Code
 
 Code MUST be readable, maintainable, and follow consistent conventions:
+
 - Use meaningful variable and function names that express intent
 - Keep functions and methods focused on a single responsibility
 - Prefer explicit over implicit - clarity over cleverness
@@ -37,6 +38,7 @@ Code MUST be readable, maintainable, and follow consistent conventions:
 ### II. Simple UX
 
 User experience MUST prioritize simplicity and intuitiveness:
+
 - Every feature serves a clear user need - no feature creep
 - Navigation must be obvious and require minimal clicks
 - Forms and interactions follow convention over innovation
@@ -49,6 +51,7 @@ User experience MUST prioritize simplicity and intuitiveness:
 ### III. Responsive Design
 
 All interfaces MUST work seamlessly across device sizes:
+
 - Mobile-first CSS approach using modern layout techniques (flexbox, grid)
 - Fluid typography and spacing that scales naturally
 - Touch targets minimum 44x44px for mobile usability
@@ -61,6 +64,7 @@ All interfaces MUST work seamlessly across device sizes:
 ### IV. Minimal Dependencies
 
 External dependencies MUST be justified and minimized:
+
 - Use native browser features before adding libraries (e.g., Fetch API, CSS custom properties)
 - Every dependency must solve a significant problem or provide substantial time savings
 - Evaluate bundle size impact before adoption
@@ -72,6 +76,7 @@ External dependencies MUST be justified and minimized:
 ### V. No Testing (Code Quality via Review)
 
 This project explicitly DOES NOT include automated tests:
+
 - No unit tests, no integration tests, no end-to-end tests
 - Quality assurance happens through manual testing and code review
 - Features are validated by running the application
@@ -85,11 +90,13 @@ This project explicitly DOES NOT include automated tests:
 This section defines the MANDATORY technology choices for the project:
 
 **Backend Framework**: Laravel with Livewire
+
 - Livewire MUST be used for all dynamic UI interactions
 - Server-side rendering with reactive components
 - Minimal JavaScript - let Livewire handle interactivity
 
 **Frontend Styling**: Custom CSS with layers and Open Props
+
 - CSS layers MUST organize styles by priority (@layer reset, base, components, utilities)
 - Open Props (open-props.style) MUST be used for design tokens
 - No CSS frameworks (no Tailwind, Bootstrap, etc.)

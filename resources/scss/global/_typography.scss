@@ -1,0 +1,92 @@
+@use "../util" as *;
+
+@layer typography {
+    :root {
+        /* Font families */
+        --font-primary: "Nunito", system-ui, -apple-system, sans-serif;
+        --font-secondary: "Nunito Sans", system-ui, -apple-system, sans-serif;
+
+        /* Font sizes - fluid typography */
+        --fs-12: clamp(#{rem(10)}, 0.625rem + 0.25vw, #{rem(12)});
+        --fs-14: clamp(#{rem(12)}, 0.75rem + 0.25vw, #{rem(14)});
+        --fs-16: clamp(#{rem(14)}, 0.875rem + 0.25vw, #{rem(16)});
+        --fs-18: clamp(#{rem(16)}, 1rem + 0.25vw, #{rem(18)});
+        --fs-20: clamp(#{rem(18)}, 1.125rem + 0.25vw, #{rem(20)});
+        --fs-24: clamp(#{rem(20)}, 1.25rem + 0.5vw, #{rem(24)});
+        --fs-28: clamp(#{rem(22)}, 1.375rem + 0.75vw, #{rem(28)});
+        --fs-32: clamp(#{rem(24)}, 1.5rem + 1vw, #{rem(32)});
+        --fs-40: clamp(#{rem(28)}, 1.75rem + 1.5vw, #{rem(40)});
+        --fs-48: clamp(#{rem(32)}, 2rem + 2vw, #{rem(48)});
+        --fs-56: clamp(#{rem(36)}, 2.25rem + 2.5vw, #{rem(56)});
+
+        /* Font weights */
+        --fw-light: 300;
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-semibold: 600;
+        --fw-bold: 700;
+        --fw-extrabold: 800;
+
+        /* Line heights */
+        --lh-tight: 1.2;
+        --lh-snug: 1.375;
+        --lh-normal: 1.5;
+        --lh-relaxed: 1.625;
+        --lh-loose: 2;
+    }
+
+    body {
+        font-family: var(--font-primary);
+        font-size: var(--fs-16);
+        line-height: var(--lh-normal);
+        font-weight: var(--fw-regular);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-bold);
+        line-height: var(--lh-tight);
+        margin-bottom: var(--spacing-200);
+    }
+
+    h1 {
+        font-size: var(--fs-48);
+    }
+
+    h2 {
+        font-size: var(--fs-40);
+    }
+
+    h3 {
+        font-size: var(--fs-32);
+    }
+
+    h4 {
+        font-size: var(--fs-24);
+    }
+
+    h5 {
+        font-size: var(--fs-20);
+    }
+
+    h6 {
+        font-size: var(--fs-18);
+    }
+
+    p {
+        margin-bottom: var(--spacing-200);
+    }
+
+    strong {
+        font-weight: var(--fw-bold);
+    }
+
+    small {
+        font-size: var(--fs-14);
+    }
+}

@@ -1,0 +1,35 @@
+@use "functions" as f;
+@use "sass:math";
+@use "sass:map";
+
+$breakpoints: (
+    "sm": f.em(640),
+    "md": f.em(768),
+    "lg": f.em(1024),
+    "xl": f.em(1280),
+    "xxl": f.em(1536),
+    // Aliases for backwards compatibility
+    "small": f.em(640),
+    "medium": f.em(768),
+    "large": f.em(1024),
+    "xlarge": f.em(1280),
+);
+
+@mixin breakpoint($size) {
+    @media (width >= map.get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (width < map.get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+// Alias for breakpoint-down
+@mixin breakpoint-max($size) {
+    @include breakpoint-down($size) {
+        @content;
+    }
+}
