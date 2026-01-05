@@ -111,13 +111,13 @@ A user reaches the bottom of any page and can see footer content including infor
 
 ### Edge Cases
 
-- What happens when a user applies filters that result in zero matching recipes? (Filters persist; message displayed)
-- How does the system handle recipe images that fail to load or are missing?
-- What happens when a user searches for a term with no matches? (Search term and filters persist; message displayed)
-- How does the application handle related recipes when fewer than 3 related recipes are available?
-- What happens when recipe data is incomplete (missing prep time, cook time, or other fields)?
-- How does the search field handle special characters or very long search terms?
-- What happens when a user navigates directly to a recipe detail page URL that doesn't exist?
+-   What happens when a user applies filters that result in zero matching recipes? (Filters persist; message displayed)
+-   How does the system handle recipe images that fail to load or are missing?
+-   What happens when a user searches for a term with no matches? (Search term and filters persist; message displayed)
+-   How does the application handle related recipes when fewer than 3 related recipes are available?
+-   What happens when recipe data is incomplete (missing prep time, cook time, or other fields)?
+-   How does the search field handle special characters or very long search terms?
+-   What happens when a user navigates directly to a recipe detail page URL that doesn't exist?
 
 ## Requirements _(mandatory)_
 
@@ -125,93 +125,93 @@ A user reaches the bottom of any page and can see footer content including infor
 
 **Page Structure & Navigation**
 
-- **FR-001**: Application MUST provide a home page that serves as the main entry point
-- **FR-002**: Application MUST provide an about page with information about the application
-- **FR-003**: Application MUST provide a recipes index page displaying all available recipes
-- **FR-004**: Application MUST provide individual recipe detail pages for each recipe
-- **FR-005**: Application MUST display a navigation bar on all pages containing a logo, navigation links (Home, About, Recipes), and a "Browse Recipes" button
-- **FR-006**: Application MUST navigate users to the home page when they click the logo or Home link
-- **FR-007**: Application MUST navigate users to the recipes index page when they click Recipes link or Browse Recipes button
-- **FR-008**: Application MUST display a footer on all pages containing informational text and social media icons (Instagram, Twitter, TikTok)
+-   **FR-001**: Application MUST provide a home page that serves as the main entry point
+-   **FR-002**: Application MUST provide an about page with information about the application
+-   **FR-003**: Application MUST provide a recipes index page displaying all available recipes
+-   **FR-004**: Application MUST provide individual recipe detail pages for each recipe
+-   **FR-005**: Application MUST display a navigation bar on all pages containing a logo, navigation links (Home, About, Recipes), and a "Browse Recipes" button
+-   **FR-006**: Application MUST navigate users to the home page when they click the logo or Home link
+-   **FR-007**: Application MUST navigate users to the recipes index page when they click Recipes link or Browse Recipes button
+-   **FR-008**: Application MUST display a footer on all pages containing informational text and social media icons (Instagram, Twitter, TikTok)
 
 **Recipe Display**
 
-- **FR-009**: Recipe index page MUST display recipes as cards in a grid or list layout
-- **FR-010**: Each recipe card MUST display: picture, title, description, servings, preparation time, cook time, ingredient count, and a "View Recipe" button
-- **FR-011**: Recipe detail page MUST display all recipe information: picture, title, description, servings, preparation time, cook time, full ingredient list, and cooking instructions as free-form text
-- **FR-012**: Recipe detail page MUST include a "Related Recipes" section displaying 3 randomly selected recipe cards from all available recipes (excluding the current recipe)
-- **FR-013**: Related recipe cards MUST follow the same format as cards on the recipes index page
+-   **FR-009**: Recipe index page MUST display recipes as cards in a grid or list layout
+-   **FR-010**: Each recipe card MUST display: picture, title, description, servings, preparation time, cook time, ingredient count, and a "View Recipe" button
+-   **FR-011**: Recipe detail page MUST display all recipe information: picture, title, description, servings, preparation time, cook time, full ingredient list, and cooking instructions as free-form text
+-   **FR-012**: Recipe detail page MUST include a "Related Recipes" section displaying 3 randomly selected recipe cards from all available recipes (excluding the current recipe)
+-   **FR-013**: Related recipe cards MUST follow the same format as cards on the recipes index page
 
 **Search & Filter Functionality**
 
-- **FR-014**: Recipes index page MUST provide a filter area positioned above the recipe list
-- **FR-015**: Filter area MUST include a search field for entering search queries
-- **FR-016**: Filter area MUST include a dropdown select for maximum preparation time
-- **FR-017**: Filter area MUST include a dropdown select for maximum cook time
-- **FR-018**: Application MUST filter recipes by name in real-time as the user types in the search field, with debouncing (~300ms delay after typing stops)
-- **FR-019**: Application MUST filter recipes by ingredient in real-time as the user types in the search field, with debouncing (~300ms delay after typing stops)
-- **FR-020**: Application MUST filter recipes to show only those with preparation time less than or equal to the selected maximum when a user selects a max preparation time
-- **FR-021**: Application MUST filter recipes to show only those with cook time less than or equal to the selected maximum when a user selects a max cook time
-- **FR-022**: Application MUST apply all active filters simultaneously (search term, max prep time, max cook time)
-- **FR-023**: Application MUST update the displayed recipe list immediately when any filter value changes
+-   **FR-014**: Recipes index page MUST provide a filter area positioned above the recipe list
+-   **FR-015**: Filter area MUST include a search field for entering search queries
+-   **FR-016**: Filter area MUST include a dropdown select for maximum preparation time
+-   **FR-017**: Filter area MUST include a dropdown select for maximum cook time
+-   **FR-018**: Application MUST filter recipes by name in real-time as the user types in the search field, with debouncing (~300ms delay after typing stops)
+-   **FR-019**: Application MUST filter recipes by ingredient in real-time as the user types in the search field, with debouncing (~300ms delay after typing stops)
+-   **FR-020**: Application MUST filter recipes to show only those with preparation time less than or equal to the selected maximum when a user selects a max preparation time
+-   **FR-021**: Application MUST filter recipes to show only those with cook time less than or equal to the selected maximum when a user selects a max cook time
+-   **FR-022**: Application MUST apply all active filters simultaneously (search term, max prep time, max cook time)
+-   **FR-023**: Application MUST update the displayed recipe list immediately when any filter value changes
 
 **Responsive Design & Interactivity**
 
-- **FR-024**: Application MUST provide responsive layouts that adapt to different screen sizes (desktop, tablet, mobile)
-- **FR-025**: Application MUST display hover states for all interactive elements when a user hovers over them
-- **FR-026**: Application MUST display focus states for all interactive elements when they receive keyboard focus
-- **FR-027**: Application MUST support keyboard navigation for all interactive elements
+-   **FR-024**: Application MUST provide responsive layouts that adapt to different screen sizes (desktop, tablet, mobile)
+-   **FR-025**: Application MUST display hover states for all interactive elements when a user hovers over them
+-   **FR-026**: Application MUST display focus states for all interactive elements when they receive keyboard focus
+-   **FR-027**: Application MUST support keyboard navigation for all interactive elements
 
 **Content & Data Handling**
 
-- **FR-028**: Application MUST handle cases where recipe images are missing or fail to load by displaying a placeholder or fallback image
-- **FR-029**: Application MUST display an appropriate message when filter/search criteria result in zero matching recipes while persisting all current filter selections
-- **FR-030**: Application MUST handle cases where fewer than 3 related recipes are available by displaying available recipes without leaving empty spaces
-- **FR-031**: Application MUST gracefully handle incomplete recipe data (missing optional fields like description)
+-   **FR-028**: Application MUST handle cases where recipe images are missing or fail to load by displaying a placeholder or fallback image
+-   **FR-029**: Application MUST display an appropriate message when filter/search criteria result in zero matching recipes while persisting all current filter selections
+-   **FR-030**: Application MUST handle cases where fewer than 3 related recipes are available by displaying available recipes without leaving empty spaces
+-   **FR-031**: Application MUST gracefully handle incomplete recipe data (missing optional fields like description)
 
 ### Key Entities _(include if feature involves data)_
 
-- **Recipe**: Represents a cooking recipe with attributes including picture (image), title (text), description (text), servings (number), preparation time (duration in minutes), cook time (duration in minutes), instructions (free-form text), ingredients (list of text items for search purposes), and related recipes (references to other recipe entities)
-- **Page**: Represents different sections of the application (Home, About, Recipes Index, Recipe Detail) with navigation relationships between them
-- **Navigation**: Represents the navigation structure including links, logo, and Browse Recipes button, consistent across all pages
-- **Footer**: Represents footer content including informational text and social media links, consistent across all pages
+-   **Recipe**: Represents a cooking recipe with attributes including picture (image), title (text), description (text), servings (number), preparation time (duration in minutes), cook time (duration in minutes), instructions (free-form text), ingredients (list of text items for search purposes), and related recipes (references to other recipe entities)
+-   **Page**: Represents different sections of the application (Home, About, Recipes Index, Recipe Detail) with navigation relationships between them
+-   **Navigation**: Represents the navigation structure including links, logo, and Browse Recipes button, consistent across all pages
+-   **Footer**: Represents footer content including informational text and social media links, consistent across all pages
 
 ## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 
-- **SC-001**: Users can navigate from the home page to viewing a recipe detail page in under 30 seconds
-- **SC-002**: Users can find a specific recipe using search functionality within 15 seconds of entering a search term
-- **SC-003**: Filter controls reduce the recipe list to relevant results in under 1 second after selection
-- **SC-004**: Application layout adapts seamlessly to screen sizes from 320px (mobile) to 1920px (desktop) wide
-- **SC-005**: 95% of users successfully complete their primary task (finding and viewing a recipe) on their first attempt
-- **SC-006**: All interactive elements display visible hover and focus states within 100 milliseconds of user interaction
-- **SC-007**: Search and filter operations return relevant results with 100% accuracy based on selected criteria
-- **SC-008**: Recipe detail pages load and display complete information in under 2 seconds on standard broadband connections
-- **SC-009**: Related recipes section displays appropriate content (1-3 recipes) on 100% of detail pages
+-   **SC-001**: Users can navigate from the home page to viewing a recipe detail page in under 30 seconds
+-   **SC-002**: Users can find a specific recipe using search functionality within 15 seconds of entering a search term
+-   **SC-003**: Filter controls reduce the recipe list to relevant results in under 1 second after selection
+-   **SC-004**: Application layout adapts seamlessly to screen sizes from 320px (mobile) to 1920px (desktop) wide
+-   **SC-005**: 95% of users successfully complete their primary task (finding and viewing a recipe) on their first attempt
+-   **SC-006**: All interactive elements display visible hover and focus states within 100 milliseconds of user interaction
+-   **SC-007**: Search and filter operations return relevant results with 100% accuracy based on selected criteria
+-   **SC-008**: Recipe detail pages load and display complete information in under 2 seconds on standard broadband connections
+-   **SC-009**: Related recipes section displays appropriate content (1-3 recipes) on 100% of detail pages
 
 ## Clarifications
 
 ### Session 2025-12-28
 
-- Q: When a user searches for recipes, should the search behavior operate in real-time as they type or only when they explicitly submit/trigger the search? → A: Real-time (as-you-type) with debouncing - filters update automatically after user stops typing for ~300ms
-- Q: The recipe detail page needs to include complete cooking instructions. Should instructions be displayed as structured steps or free-form text? → A: Free-form paragraph - instructions as continuous descriptive text
-- Q: What should happen to filter dropdown selections when a user performs a search that returns zero results? → A: Persist all filters - keep current selections so users can modify them
-- Q: Should the recipe cards on the index page display the full ingredient list or just a count/summary of ingredients? → A: Count only - show number of ingredients (e.g., "12 ingredients")
-- Q: How should the "Related Recipes" be determined for each recipe detail page? → A: Random selection - randomly chosen from all available recipes
+-   Q: When a user searches for recipes, should the search behavior operate in real-time as they type or only when they explicitly submit/trigger the search? → A: Real-time (as-you-type) with debouncing - filters update automatically after user stops typing for ~300ms
+-   Q: The recipe detail page needs to include complete cooking instructions. Should instructions be displayed as structured steps or free-form text? → A: Free-form paragraph - instructions as continuous descriptive text
+-   Q: What should happen to filter dropdown selections when a user performs a search that returns zero results? → A: Persist all filters - keep current selections so users can modify them
+-   Q: Should the recipe cards on the index page display the full ingredient list or just a count/summary of ingredients? → A: Count only - show number of ingredients (e.g., "12 ingredients")
+-   Q: How should the "Related Recipes" be determined for each recipe detail page? → A: Random selection - randomly chosen from all available recipes
 
 ## Assumptions
 
-- Recipe data (images, text content, timing information) is available from a data source and can be accessed by the application
-- Recipe images are provided in web-optimized formats with reasonable file sizes
-- The recipe collection contains sufficient variety to support meaningful filtering and related recipe suggestions
-- Social media profile URLs are predetermined and do not require configuration by end users
-- Standard web accessibility practices (WCAG 2.1 Level AA) should be followed for focus states and keyboard navigation
-- Search functionality performs case-insensitive matching on recipe names and ingredient lists
-- Filter dropdown options for prep time and cook time use standardized time increments (e.g., 15, 30, 45, 60 minutes)
-- Related recipes are randomly selected from all available recipes (excluding the currently displayed recipe)
-- The application is a client-facing web application accessible via modern web browsers (Chrome, Firefox, Safari, Edge - latest 2 versions)
-- Recipe data persistence and management is handled outside the scope of this feature (assumes read-only access to recipe data)
+-   Recipe data (images, text content, timing information) is available from a data source and can be accessed by the application
+-   Recipe images are provided in web-optimized formats with reasonable file sizes
+-   The recipe collection contains sufficient variety to support meaningful filtering and related recipe suggestions
+-   Social media profile URLs are predetermined and do not require configuration by end users
+-   Standard web accessibility practices (WCAG 2.1 Level AA) should be followed for focus states and keyboard navigation
+-   Search functionality performs case-insensitive matching on recipe names and ingredient lists
+-   Filter dropdown options for prep time and cook time use standardized time increments (e.g., 15, 30, 45, 60 minutes)
+-   Related recipes are randomly selected from all available recipes (excluding the currently displayed recipe)
+-   The application is a client-facing web application accessible via modern web browsers (Chrome, Firefox, Safari, Edge - latest 2 versions)
+-   Recipe data persistence and management is handled outside the scope of this feature (assumes read-only access to recipe data)
 
 ## Technical Standards _(mandatory for future projects)_
 
@@ -222,15 +222,17 @@ This project implements a modern, maintainable SCSS architecture that MUST be fo
 #### Structure Requirements
 
 **SCSS-001**: Project MUST organize styles using a flat folder structure with three main directories:
-- `global/` - Global styles including colors, typography, layout, forms, and base styles
-- `components/` - Component-specific styles using BEM methodology
-- `util/` - SCSS utilities including functions and mixins
+
+-   `global/` - Global styles including colors, typography, layout, forms, and base styles
+-   `components/` - Component-specific styles using BEM methodology
+-   `util/` - SCSS utilities including functions and mixins
 
 **SCSS-002**: Project MUST NOT use numbered folder prefixes (e.g., `0-settings`, `1-tools`, `2-generic`). Folder names MUST be semantic and descriptive.
 
 **SCSS-003**: Each directory MUST contain an `_index.scss` file that uses `@forward` to export all module files.
 
 **SCSS-004**: Main entry point (`app.scss`) MUST use modern `@use` syntax (NOT deprecated `@import`) and MUST be concise:
+
 ```scss
 @use "util";
 @use "global";
@@ -240,25 +242,29 @@ This project implements a modern, maintainable SCSS architecture that MUST be fo
 #### CSS Variables & Custom Properties
 
 **SCSS-005**: Project MUST use CSS custom properties (CSS variables) defined in `:root` selector, NOT SCSS variables, for all design tokens including:
-- Colors (e.g., `--c-primary-500`, `--color-bg-primary`)
-- Spacing (e.g., `--spacing-200`, `--spacing-400`)
-- Typography (e.g., `--fs-16`, `--fw-bold`, `--lh-normal`)
-- Border radius (e.g., `--br-10`, `--br-round`)
-- Shadows (e.g., `--shadow-md`, `--shadow-lg`)
-- Transitions (e.g., `--transition-fast`, `--transition-base`)
+
+-   Colors (e.g., `--c-primary-500`, `--color-bg-primary`)
+-   Spacing (e.g., `--spacing-200`, `--spacing-400`)
+-   Typography (e.g., `--fs-16`, `--fw-bold`, `--lh-normal`)
+-   Border radius (e.g., `--br-10`, `--br-round`)
+-   Shadows (e.g., `--shadow-md`, `--shadow-lg`)
+-   Transitions (e.g., `--transition-fast`, `--transition-base`)
 
 **SCSS-006**: Color definitions MUST use OKLCH color space for perceptually uniform colors:
+
 ```scss
 --c-primary-500: oklch(70% 0.18 30);
 ```
 
 **SCSS-007**: Semantic color variables MUST use `light-dark()` function for automatic theme support:
+
 ```scss
 --color-bg-primary: light-dark(var(--c-white), var(--c-neutral-950));
 --color-text-primary: light-dark(var(--c-neutral-900), var(--c-neutral-100));
 ```
 
 **SCSS-008**: Typography MUST use fluid sizing with `clamp()` for responsive text:
+
 ```scss
 --fs-48: clamp(#{rem(32)}, 2rem + 2vw, #{rem(48)});
 ```
@@ -266,21 +272,23 @@ This project implements a modern, maintainable SCSS architecture that MUST be fo
 #### CSS Layers for Cascade Control
 
 **SCSS-009**: Project MUST use CSS `@layer` to organize styles with explicit cascade ordering:
-- `@layer reset` - CSS reset (lowest priority)
-- `@layer global` - Global base styles
-- `@layer typography` - Typography styles
-- `@layer layout` - Layout utilities
-- `@layer forms` - Form element styles
-- `@layer components` - Component styles (highest priority)
+
+-   `@layer reset` - CSS reset (lowest priority)
+-   `@layer global` - Global base styles
+-   `@layer typography` - Typography styles
+-   `@layer layout` - Layout utilities
+-   `@layer forms` - Form element styles
+-   `@layer components` - Component styles (highest priority)
 
 **SCSS-010**: All global styles MUST be wrapped in appropriate `@layer` declarations to ensure predictable cascade without specificity wars.
 
 #### Component Architecture
 
 **SCSS-011**: Components MUST follow BEM (Block Element Modifier) naming methodology:
-- Block: `.recipe-card`
-- Element: `.recipe-card__title`
-- Modifier: `.recipe-card--featured`
+
+-   Block: `.recipe-card`
+-   Element: `.recipe-card__title`
+-   Modifier: `.recipe-card--featured`
 
 **SCSS-012**: Component styles MUST be wrapped in `@layer components` declaration.
 
@@ -291,6 +299,7 @@ This project implements a modern, maintainable SCSS architecture that MUST be fo
 #### Layout Patterns
 
 **SCSS-015**: Project MUST implement sticky footer pattern using flexbox:
+
 ```scss
 body {
     min-height: 100vh;
@@ -308,6 +317,7 @@ footer {
 ```
 
 **SCSS-016**: Container/wrapper classes MUST use CSS custom properties for max-width and padding:
+
 ```scss
 .wrapper {
     width: 100%;
@@ -320,6 +330,7 @@ footer {
 #### Responsive Design
 
 **SCSS-017**: Breakpoint mixins MUST use modern `width` media query syntax:
+
 ```scss
 @mixin breakpoint($size) {
     @media (width >= map.get($breakpoints, $size)) {
@@ -329,17 +340,19 @@ footer {
 ```
 
 **SCSS-018**: Breakpoint names MUST use short, clear abbreviations:
-- `sm`: 640px (small)
-- `md`: 768px (medium)
-- `lg`: 1024px (large)
-- `xl`: 1280px (extra large)
-- `xxl`: 1536px (extra extra large)
+
+-   `sm`: 640px (small)
+-   `md`: 768px (medium)
+-   `lg`: 1024px (large)
+-   `xl`: 1280px (extra large)
+-   `xxl`: 1536px (extra extra large)
 
 **SCSS-019**: Breakpoint values MUST be defined in `em` units using utility function for better accessibility.
 
 #### Utility Functions
 
 **SCSS-020**: Project MUST provide `rem()` and `em()` utility functions for unit conversion:
+
 ```scss
 @function rem($pixels) {
     @return math.div($pixels, 16) * 1rem;
@@ -351,17 +364,20 @@ footer {
 #### Modern CSS Features
 
 **SCSS-022**: Project SHOULD use relative color syntax for opacity variations:
+
 ```scss
 // Transparent background with alpha
 background-color: oklch(from var(--c-primary-600) l c h / 0.1);
 ```
 
 **SCSS-023**: Project SHOULD use `backdrop-filter` for glassmorphism effects on sticky navigation:
+
 ```scss
 backdrop-filter: blur(8px);
 ```
 
 **SCSS-024**: Interactive elements SHOULD use CSS transitions with custom property timing:
+
 ```scss
 transition: all var(--transition-fast);
 ```
@@ -369,22 +385,25 @@ transition: all var(--transition-fast);
 #### File Organization
 
 **SCSS-025**: Global folder MUST contain at minimum:
-- `_colors.scss` - Color system with CSS variables
-- `_boilerplate.scss` - Reset and base styles with layers
-- `_typography.scss` - Font definitions and text styles
-- `_layout.scss` - Layout utilities and sticky footer
-- `_forms.scss` - Form element styles
-- `_index.scss` - Exports using `@forward`
+
+-   `_colors.scss` - Color system with CSS variables
+-   `_boilerplate.scss` - Reset and base styles with layers
+-   `_typography.scss` - Font definitions and text styles
+-   `_layout.scss` - Layout utilities and sticky footer
+-   `_forms.scss` - Form element styles
+-   `_index.scss` - Exports using `@forward`
 
 **SCSS-026**: Util folder MUST contain:
-- `_functions.scss` - SCSS functions (rem, em, etc.)
-- `_mixins.scss` - SCSS mixins (breakpoints, etc.)
-- `_index.scss` - Exports using `@forward`
+
+-   `_functions.scss` - SCSS functions (rem, em, etc.)
+-   `_mixins.scss` - SCSS mixins (breakpoints, etc.)
+-   `_index.scss` - Exports using `@forward`
 
 **SCSS-027**: Components folder structure:
-- One file per component using BEM naming
-- `_index.scss` to export all components
-- Components MUST be self-contained with all related styles
+
+-   One file per component using BEM naming
+-   `_index.scss` to export all components
+-   Components MUST be self-contained with all related styles
 
 #### Browser Support & Compatibility
 
@@ -393,6 +412,7 @@ transition: all var(--transition-fast);
 **SCSS-029**: CSS features used MUST have minimum 80% global browser support OR include appropriate fallbacks.
 
 **SCSS-030**: Project SHOULD use `color-scheme` CSS property for automatic OS-level theme detection:
+
 ```scss
 @media (prefers-color-scheme: light) {
     color-scheme: light;
@@ -408,8 +428,9 @@ transition: all var(--transition-fast);
 **SCSS-031**: CSS custom properties MUST be inspectable in browser dev tools (this is the primary reason for using CSS variables over SCSS variables).
 
 **SCSS-032**: Variable naming MUST be semantic and follow these patterns:
-- Primitive values: `--c-primary-500` (color), `--spacing-300` (spacing)
-- Semantic tokens: `--color-bg-primary` (background), `--color-text-primary` (text)
+
+-   Primitive values: `--c-primary-500` (color), `--spacing-300` (spacing)
+-   Semantic tokens: `--color-bg-primary` (background), `--color-text-primary` (text)
 
 **SCSS-033**: Build output SHOULD be optimized and smaller than previous ITCSS implementations (target: <20kB for typical application).
 
@@ -433,23 +454,24 @@ When converting existing projects from ITCSS or other legacy structures:
 
 #### Benefits of This Architecture
 
-- **Maintainability**: Clear separation of concerns with semantic folder names
-- **Debuggability**: CSS variables inspectable in browser dev tools
-- **Theme Support**: Built-in light/dark theme with `light-dark()` function
-- **Performance**: Smaller CSS output (~11% reduction vs ITCSS)
-- **Modern Standards**: Uses latest CSS features (layers, OKLCH, relative colors)
-- **Cascade Control**: Explicit layer ordering eliminates specificity issues
-- **Future-Proof**: Industry-standard patterns used by modern frameworks
-- **Developer Experience**: Cleaner code, easier to navigate, faster development
+-   **Maintainability**: Clear separation of concerns with semantic folder names
+-   **Debuggability**: CSS variables inspectable in browser dev tools
+-   **Theme Support**: Built-in light/dark theme with `light-dark()` function
+-   **Performance**: Smaller CSS output (~11% reduction vs ITCSS)
+-   **Modern Standards**: Uses latest CSS features (layers, OKLCH, relative colors)
+-   **Cascade Control**: Explicit layer ordering eliminates specificity issues
+-   **Future-Proof**: Industry-standard patterns used by modern frameworks
+-   **Developer Experience**: Cleaner code, easier to navigate, faster development
 
 #### Reference Implementation
 
 See project files for complete implementation:
-- `resources/scss/global/` - Global styles with CSS layers
-- `resources/scss/components/` - BEM components
-- `resources/scss/util/` - SCSS utilities
-- `resources/scss/app.scss` - Entry point
-- `SCSS_RESTRUCTURE.md` - Complete migration guide
-- `SCSS_BEFORE_AFTER.md` - Visual comparison with examples
+
+-   `resources/scss/global/` - Global styles with CSS layers
+-   `resources/scss/components/` - BEM components
+-   `resources/scss/util/` - SCSS utilities
+-   `resources/scss/app.scss` - Entry point
+-   `SCSS_RESTRUCTURE.md` - Complete migration guide
+-   `SCSS_BEFORE_AFTER.md` - Visual comparison with examples
 
 This architecture MUST be used as the foundation for all future projects to ensure consistency, maintainability, and adherence to 2026 CSS best practices.
