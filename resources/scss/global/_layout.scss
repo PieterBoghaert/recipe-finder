@@ -22,31 +22,31 @@
     }
 
     .wrapper {
-        max-width: var(--wrapper-size);
+        max-inline-size: var(--wrapper-size);
         margin-inline: auto;
         padding-inline: var(--wrapper-padding);
     }
 
     .container {
-        width: 100%;
+        inline-size: 100%;
         margin-inline: auto;
         padding-inline: var(--spacing-200);
 
         @include breakpoint(sm) {
-            max-width: #{rem(640)};
+            max-inline-size: #{rem(640)};
         }
 
         @include breakpoint(md) {
-            max-width: #{rem(768)};
+            max-inline-size: #{rem(768)};
         }
 
         @include breakpoint(lg) {
-            max-width: #{rem(1024)};
+            max-inline-size: #{rem(1024)};
             padding-inline: var(--spacing-300);
         }
 
         @include breakpoint(xl) {
-            max-width: #{rem(1280)};
+            max-inline-size: #{rem(1280)};
         }
     }
 
@@ -76,6 +76,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        margin-inline: var(--spacing-200);
     }
 
     main {

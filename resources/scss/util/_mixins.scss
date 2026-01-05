@@ -1,6 +1,7 @@
 @use "functions" as f;
 @use "sass:math";
 @use "sass:map";
+@use "sass:list";
 
 $breakpoints: (
     "sm": f.em(640),
@@ -15,21 +16,123 @@ $breakpoints: (
     "xlarge": f.em(1280),
 );
 
+// Modern range syntax: min-width (mobile-first)
 @mixin breakpoint($size) {
     @media (width >= map.get($breakpoints, $size)) {
         @content;
     }
 }
 
+// Modern range syntax: max-width
 @mixin breakpoint-down($size) {
     @media (width < map.get($breakpoints, $size)) {
         @content;
     }
 }
 
-// Alias for breakpoint-down
+// Modern range syntax: between two breakpoints
+@mixin breakpoint-between($min, $max) {
+    @media (width >= map.get($breakpoints, $min)) and (width < map.get($breakpoints, $max)) {
+        @content;
+    }
+}
+
+// Modern range syntax: exact breakpoint only (between this and next)
+@mixin breakpoint-only($size) {
+    $sizes: ("sm", "md", "lg", "xl", "xxl");
+    $index: list.index($sizes, $size);
+
+    @if $index and $index < list.length($sizes) {
+        $next-size: list.nth($sizes, $index + 1);
+        @media (width >= map.get($breakpoints, $size)) and (width < map.get($breakpoints, $next-size)) {
+            @content;
+        }
+    } @else if $index == list.length($sizes) {
+        @media (width >= map.get($breakpoints, $size)) {
+            @content;
+        }
+    }
+}
+
+// Alias for breakpoint-down (backwards compatibility)
 @mixin breakpoint-max($size) {
     @include breakpoint-down($size) {
+        @content;
+    }
+}
+
+// Custom range with pixel values (for special cases)
+@mixin media-range($min: null, $max: null) {
+    @if $min and $max {
+        @media (width >= #{$min}) and (width < #{$max}) {
+            @content;
+        }
+    } @else if $min {
+        @media (width >= #{$min}) {
+            @content;
+        }
+    } @else if $max {
+        @media (width < #{$max}) {
+            @content;
+        }
+    }
+}
+
+// Modern range syntax for height queries
+@mixin height-range($min: null, $max: null) {
+    @if $min and $max {
+        @media (height >= #{$min}) and (height < #{$max}) {
+            @content;
+        }
+    } @else if $min {
+        @media (height >= #{$min}) {
+            @content;
+        }
+    } @else if $max {
+        @media (height < #{$max}) {
+            @content;
+        }
+    }
+}
+
+// Modern range syntax for aspect ratio
+@mixin aspect-ratio($ratio) {
+    @media (aspect-ratio >= #{$ratio}) {
+        @content;
+    }
+}
+
+// Portrait orientation using modern syntax
+@mixin portrait {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+// Landscape orientation using modern syntax
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+// Reduced motion preference
+@mixin reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}
+
+// Dark mode preference
+@mixin prefers-dark {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
+
+// Light mode preference
+@mixin prefers-light {
+    @media (prefers-color-scheme: light) {
         @content;
     }
 }

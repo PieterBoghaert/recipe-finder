@@ -8,7 +8,7 @@
         padding: var(--spacing-400);
         background-color: var(--color-surface-secondary);
         border-radius: var(--br-15);
-        margin-bottom: var(--spacing-500);
+        margin-block-end: var(--spacing-500);
 
         @include breakpoint(md) {
             align-items: flex-end;
@@ -30,7 +30,7 @@
 
         &__input,
         &__select {
-            width: 100%;
+            inline-size: 100%;
             padding: var(--spacing-150) var(--spacing-200);
             background-color: var(--color-surface-primary);
             color: var(--color-text-primary);
@@ -62,7 +62,7 @@
             background-position: right var(--spacing-150) center;
             background-repeat: no-repeat;
             background-size: #{rem(20)} #{rem(20)};
-            padding-right: var(--spacing-500);
+            padding-inline-end: var(--spacing-500);
         }
 
         &__actions {

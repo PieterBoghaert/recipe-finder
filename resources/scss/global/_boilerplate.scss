@@ -63,6 +63,7 @@
         /* Spacing scale */
         --spacing-50: #{rem(4)};
         --spacing-100: #{rem(8)};
+        --spacing-125: #{rem(10)};
         --spacing-150: #{rem(12)};
         --spacing-200: #{rem(16)};
         --spacing-250: #{rem(20)};
@@ -84,8 +85,7 @@
 
         /* Shadows */
         --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-            0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-md: 0 12px 22px -12px var(--c-neutral-300);
         --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
             0 4px 6px -4px rgb(0 0 0 / 0.1);
         --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
@@ -106,5 +106,17 @@
 
     main {
         flex: 1;
+    }
+
+    /* Respect user's motion preferences using modern mixin */
+    @include reduced-motion {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
     }
 }

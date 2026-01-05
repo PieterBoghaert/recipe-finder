@@ -4,13 +4,14 @@
     input,
     textarea,
     select {
-        width: 100%;
+        inline-size: 100%;
         padding: var(--spacing-150) var(--spacing-200);
         background-color: var(--color-surface-primary);
         color: var(--color-text-primary);
         border: 1px solid var(--color-border-primary);
         border-radius: var(--br-10);
-        font-size: var(--fs-16);
+        font-size: inherit;
+        font-family: inherit;
         line-height: var(--lh-normal);
         transition: border-color var(--transition-fast),
             box-shadow var(--transition-fast);
@@ -47,7 +48,7 @@
         background-position: right var(--spacing-150) center;
         background-repeat: no-repeat;
         background-size: #{rem(20)} #{rem(20)};
-        padding-right: var(--spacing-500);
+        padding-inline-end: var(--spacing-500);
     }
 
     label {
@@ -55,23 +56,23 @@
         font-size: var(--fs-14);
         font-weight: var(--fw-medium);
         color: var(--color-text-primary);
-        margin-bottom: var(--spacing-100);
+        margin-block-end: var(--spacing-100);
     }
 
     .form-group {
-        margin-bottom: var(--spacing-300);
+        margin-block-end: var(--spacing-300);
     }
 
     .form-error {
         display: block;
-        margin-top: var(--spacing-100);
+        margin-block-start: var(--spacing-100);
         font-size: var(--fs-14);
         color: oklch(55% 0.2 25);
     }
 
     .form-help {
         display: block;
-        margin-top: var(--spacing-100);
+        margin-block-start: var(--spacing-100);
         font-size: var(--fs-14);
         color: var(--color-text-secondary);
     }
