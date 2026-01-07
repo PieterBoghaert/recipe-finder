@@ -1,5 +1,8 @@
 @use "../util" as *;
 
+// Import Nunito and Nunito Sans from Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=Nunito+Sans:wght@500;700&display=swap");
+
 @layer typography {
     :root {
         /* Font families */
@@ -10,14 +13,15 @@
         --fs-12: clamp(#{rem(10)}, 0.625rem + 0.25vw, #{rem(12)});
         --fs-14: clamp(#{rem(12)}, 0.75rem + 0.25vw, #{rem(14)});
         --fs-16: clamp(#{rem(14)}, 0.875rem + 0.25vw, #{rem(16)});
-        --fs-18: clamp(#{rem(16)}, 1rem + 0.25vw, #{rem(18)});
+        --fs-18: #{rem(18)};
         --fs-20: clamp(#{rem(18)}, 1.125rem + 0.25vw, #{rem(20)});
         --fs-24: clamp(#{rem(20)}, 1.25rem + 0.5vw, #{rem(24)});
         --fs-28: clamp(#{rem(22)}, 1.375rem + 0.75vw, #{rem(28)});
         --fs-32: clamp(#{rem(24)}, 1.5rem + 1vw, #{rem(32)});
         --fs-40: clamp(#{rem(28)}, 1.75rem + 1.5vw, #{rem(40)});
-        --fs-48: clamp(#{rem(32)}, 2rem + 2vw, #{rem(48)});
+        --fs-48: clamp(#{rem(40)}, 2rem + 2vw, #{rem(48)});
         --fs-56: clamp(#{rem(36)}, 2.25rem + 2.5vw, #{rem(56)});
+        --fs-72: clamp(#{rem(52)}, 3rem + 3vw, #{rem(72)});
 
         /* Font weights */
         --fw-light: 300;
@@ -36,10 +40,10 @@
     }
 
     body {
-        font-family: var(--font-primary);
-        font-size: var(--fs-16);
+        font-family: var(--font-secondary);
+        font-size: var(--fs-18);
         line-height: var(--lh-normal);
-        font-weight: var(--fw-regular);
+        font-weight: var(--fw-medium);
     }
 
     h1,
@@ -48,18 +52,18 @@
     h4,
     h5,
     h6 {
-        font-family: var(--font-primary);
         font-weight: var(--fw-bold);
         line-height: var(--lh-tight);
-        margin-block-end: var(--spacing-200);
+        font-family: var(--font-primary);
     }
 
     h1 {
-        font-size: var(--fs-48);
+        font-size: var(--fs-72);
     }
 
-    h2 {
-        font-size: var(--fs-40);
+    h2,
+    .h2 {
+        font-size: var(--fs-48);
     }
 
     h3 {
@@ -79,7 +83,7 @@
     }
 
     p {
-        margin-block-end: var(--spacing-200);
+        //margin-block-end: var(--spacing-200);
     }
 
     strong {

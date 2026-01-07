@@ -4,10 +4,11 @@
     :root {
         /* Container widths */
         --wrapper-size: #{rem(1192)};
+        --header-wrapper-size: #{rem(1320)};
         --wrapper-padding: var(--spacing-300);
 
         /* Grid */
-        --grid-gap: var(--spacing-300);
+        --grid-gap: var(--spacing-400);
         --grid-columns: 12;
 
         /* Z-index scale */
@@ -19,6 +20,8 @@
         --z-modal: 500;
         --z-popover: 600;
         --z-tooltip: 700;
+
+        --card-size: #{rem(360)};
     }
 
     .wrapper {
@@ -76,7 +79,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        margin-inline: var(--spacing-200);
+        //margin-inline: var(--spacing-200);
     }
 
     main {

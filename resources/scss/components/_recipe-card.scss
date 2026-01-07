@@ -3,9 +3,10 @@
 @layer components {
     .recipe-card {
         background-color: var(--color-surface-primary);
-        border: 1px solid var(--color-border-primary);
-        border-radius: var(--br-15);
-        overflow: hidden;
+        border: 1px solid var(--c-neutral-300);
+        border-radius: var(--br-10);
+        overflow: clip;
+        padding: var(--spacing-100);
         transition: all var(--transition-base);
 
         &:hover {
@@ -15,14 +16,15 @@
         }
 
         &__link {
-            display: block;
+            display: flex;
+            flex-direction: column;
             block-size: 100%;
         }
 
         &__image-wrapper {
             position: relative;
             inline-size: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 1 / 1;
             overflow: hidden;
             background-color: var(--color-bg-tertiary);
         }
@@ -31,51 +33,47 @@
             inline-size: 100%;
             block-size: 100%;
             object-fit: cover;
+
+            border-radius: var(--br-10);
             transition: transform var(--transition-slow);
 
-            .recipe-card:hover & {
-                transform: scale(1.05);
-            }
+            // .recipe-card:hover & {
+            //     transform: scale(1.05);
+            // }
         }
 
         &__content {
-            padding: var(--spacing-300);
+            margin-block: var(--spacing-200);
+            padding-inline: var(--spacing-100);
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-150);
+            gap: var(--spacing-200);
+            font-size: var(--fs-16);
+            flex-grow: 1;
         }
 
         &__title {
-            font-size: var(--fs-20);
-            font-weight: var(--fw-bold);
-            color: var(--color-text-primary);
-            margin-block-end: 0;
-            line-height: var(--lh-snug);
+            flex-grow: 1;
         }
 
         &__description {
-            font-size: var(--fs-14);
+            margin-block-start: calc(var(--spacing-75) * -1);
             color: var(--color-text-secondary);
-            line-height: var(--lh-relaxed);
-            margin-block-end: 0;
         }
 
         &__meta {
             display: flex;
             flex-wrap: wrap;
             gap: var(--spacing-200);
-            padding-block-start: var(--spacing-150);
-            border-block-start: 1px solid var(--color-border-primary);
-            font-size: var(--fs-12);
+            color: var(--c-neutral-900);
         }
 
         &__meta-item {
             display: flex;
             align-items: center;
-            gap: var(--spacing-50);
-            color: var(--color-text-tertiary);
+            gap: var(--spacing-75);
 
-            svg {
+            img {
                 inline-size: #{rem(16)};
                 block-size: #{rem(16)};
                 flex-shrink: 0;
@@ -86,17 +84,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: var(--spacing-150) var(--spacing-300);
-            background-color: var(--c-primary-600);
-            color: var(--c-white);
-            font-size: var(--fs-14);
-            font-weight: var(--fw-semibold);
-            border-radius: var(--br-10);
-            margin-block-start: var(--spacing-200);
-            transition: all var(--transition-fast);
 
-            .recipe-card:hover & {
-                background-color: var(--c-primary-700);
+            &.btn {
+                border-radius: var(--br-round);
+                padding-block: var(--spacing-150);
             }
         }
     }

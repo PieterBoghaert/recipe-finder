@@ -5,14 +5,16 @@
         position: relative;
         inset-block-start: 0;
         z-index: var(--z-sticky);
+        border-bottom: 1px solid var(--c-neutral-300);
+        padding-inline: var(--spacing-200);
 
         &__wrapper {
-            max-inline-size: var(--wrapper-size);
+            max-inline-size: var(--header-wrapper-size);
             margin-inline: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-block: var(--spacing-200);
+            padding-block: var(--spacing-250);
         }
 
         &__logo-link {
@@ -31,7 +33,6 @@
             justify-content: center;
             gap: #{rem(5)};
             cursor: pointer;
-            //padding: var(--spacing-150) var(--spacing-125);
             inline-size: 40px;
             block-size: 40px;
             background-color: var(--color-bg-tertiary);
@@ -57,23 +58,21 @@
             inset-block-start: 100%;
             inset-inline-start: 0;
             inset-inline-end: 0;
-
             background-color: var(--color-surface-primary);
-
             border-radius: var(--br-10);
             padding: var(--spacing-100);
-
             opacity: 0;
             visibility: hidden;
             transform: translateY(-#{rem(10)});
             transition: all var(--transition-base);
 
             @include breakpoint(md) {
+                background-color: transparent;
                 position: static;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: var(--spacing-200);
+                gap: var(--spacing-500);
                 flex-grow: 1;
                 border-block-end: none;
                 padding: 0;
@@ -84,7 +83,7 @@
         }
 
         &__toggle:checked ~ &__hamburger span:nth-child(1) {
-            transform: rotate(45deg) translate(#{rem(6)}, #{rem(6)});
+            transform: rotate(45deg) translate(#{rem(5)}, #{rem(5)});
         }
 
         &__toggle:checked ~ &__hamburger span:nth-child(2) {
@@ -92,7 +91,7 @@
         }
 
         &__toggle:checked ~ &__hamburger span:nth-child(3) {
-            transform: rotate(-45deg) translate(#{rem(6)}, -#{rem(6)});
+            transform: rotate(-45deg) translate(#{rem(5)}, #{rem(-5)});
         }
 
         &__toggle:checked ~ &__menu {
@@ -117,9 +116,22 @@
             font-weight: var(--fw-medium);
             display: block;
             inline-size: 100%;
-            padding: var(--spacing-100) var(--spacing-150);
+            padding-block: var(--spacing-50);
             border-radius: var(--br-10);
             transition: all var(--transition-fast);
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset-inline-start: 0;
+                inset-inline-end: 0;
+                bottom: 0;
+                height: 3px;
+                background-color: var(--c-orange-500);
+                border-radius: var(--br-4);
+                opacity: 0;
+            }
 
             @include breakpoint(md) {
                 display: inline-block;
@@ -127,6 +139,9 @@
             }
 
             &:hover {
+                &::after {
+                    opacity: 1;
+                }
             }
 
             &--active {

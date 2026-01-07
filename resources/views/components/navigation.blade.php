@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="navigation__item navigation__item--cta">
-                <a href="{{ route('recipes') }}" class="navigation__button">
+                <a href="{{ route('recipes') }}" class="btn">
                     Browse Recipes
                 </a>
             </li>

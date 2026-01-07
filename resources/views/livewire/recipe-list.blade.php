@@ -1,8 +1,32 @@
-<div class="recipe-list">
+<div class="recipe-list wrapper">
     {{-- Filters Section --}}
     <div class="filters">
+
+
         <div class="filters__group">
-            <label for="search" class="filters__label">Search</label>
+            <label for="maxPrepTime" class="filters__label sr-only">Max Prep Time</label>
+            <select wire:model.live="maxPrepTime" id="maxPrepTime" class="filters__select">
+                <option value="-1">Max Prep Time</option>
+                <option value="0">0 minutes</option>
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+            </select>
+        </div>
+
+        <div class="filters__group">
+            <label for="maxCookTime" class="filters__label sr-only">Max Cook Time</label>
+            <select wire:model.live="maxCookTime" id="maxCookTime" class="filters__select">
+                <option value="-1">Max Cook Time</option>
+                <option value="0">0 minutes</option>
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+                <option value="20">20 minutes</option>
+            </select>
+        </div>
+
+        <div class="filters__group filters__group--search">
+            <label for="search" class="filters__label sr-only">Search</label>
             <input
                 type="search"
                 id="search"
@@ -11,42 +35,12 @@
                 class="filters__input">
         </div>
 
-        <div class="filters__group">
-            <label for="maxPrepTime" class="filters__label">Max Prep Time</label>
-            <select wire:model.live="maxPrepTime" id="maxPrepTime" class="filters__select">
-                <option value="">All times</option>
-                <option value="10">10 min</option>
-                <option value="15">15 min</option>
-                <option value="30">30 min</option>
-                <option value="45">45 min</option>
-                <option value="60">1 hour</option>
-            </select>
-        </div>
 
-        <div class="filters__group">
-            <label for="maxCookTime" class="filters__label">Max Cook Time</label>
-            <select wire:model.live="maxCookTime" id="maxCookTime" class="filters__select">
-                <option value="">All times</option>
-                <option value="10">10 min</option>
-                <option value="15">15 min</option>
-                <option value="30">30 min</option>
-                <option value="45">45 min</option>
-                <option value="60">1 hour</option>
-            </select>
-        </div>
-
-        @if($searchTerm || $maxPrepTime || $maxCookTime)
-        <div class="filters__actions">
-            <button wire:click="clearFilters" class="button button--outline button--sm filters__clear">
-                Clear Filters
-            </button>
-        </div>
-        @endif
     </div>
 
     {{-- Recipe Grid --}}
     @if($recipes->count() > 0)
-    <div class="grid grid--cols-3 recipe-list__grid">
+    <div class="grid recipe-list__grid">
         @foreach($recipes as $recipe)
         <x-recipe-card :recipe="$recipe" />
         @endforeach

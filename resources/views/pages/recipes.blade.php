@@ -12,10 +12,11 @@
 <body>
     <x-navigation />
 
-    <main class="container">
-        <div class="page-header">
-            <h1>All Recipes</h1>
-            <p>Browse our collection of delicious recipes. Use the filters to find exactly what you're looking for.</p>
+    <main class="site-content">
+
+        <div class="recipes-intro wrapper">
+            <h1 class="h2">Explore our simple, healthy recipes</h1>
+            <p>Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
         </div>
 
         <livewire:recipe-list />
