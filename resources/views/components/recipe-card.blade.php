@@ -1,7 +1,7 @@
 @props(['recipe'])
 
 <article class="recipe-card">
-    <a href="{{ route('recipe.show', $recipe->slug) }}" class="recipe-card__link">
+    <a href="{{ route('recipe.show', $recipe->slug) }}" class="recipe-card__link" wire:navigate>
         {{-- Recipe Image --}}
         <div class="recipe-card__image-wrapper">
             <picture>
@@ -10,6 +10,7 @@
                     src="{{ asset($recipe->image_large) }}"
                     alt="{{ $recipe->title }}"
                     class="recipe-card__image"
+                    style="view-transition-name: recipe-image-{{ $recipe->slug }};"
                     loading="lazy">
             </picture>
         </div>

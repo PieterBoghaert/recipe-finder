@@ -8,12 +8,14 @@
 
     {{-- Recipe Header --}}
     <div class="recipe-detail__header">
-        <div class="recipe-detail__image-wrapper">
+        <picture class="recipe-detail__image-wrapper">
+            <source srcset="{{ asset($recipe->image_large) }}" media="(min-width: 640px)">
             <img
-                src="{{ asset($recipe->image_large) }}"
+                src="{{ asset($recipe->image_small) }}"
                 alt="{{ $recipe->title }}"
-                class="recipe-detail__image">
-        </div>
+                class="recipe-detail__image"
+                style="view-transition-name: recipe-image-{{ $recipe->slug }};">
+        </picture>
 
         <div class="recipe-detail__header-content">
             <h1 class="recipe-detail__title h2">{{ $recipe->title }}</h1>

@@ -18,7 +18,7 @@
             <div class="wrapper">
                 <h1 class="homepage-intro__title">Healthy meals, zero fuss</h1>
                 <p class="homepage-intro__description">Discover eight quick, whole-food recipes that you can cook tonight—no processed junk, no guesswork.</p>
-                <a href="{{ url('/recipes') }}" class="btn homepage-intro__btn">Start exploring</a>
+                <a href="{{ url('/recipes') }}" class="btn homepage-intro__btn" wire:navigate>Start exploring</a>
                 <picture class="homepage-intro__image-wrapper">
                     <source srcset="{{ asset('assets/images/image-home-hero-large.webp') }}" media="(min-width: 640px)">
                     <img src="{{ asset('assets/images/image-home-hero-small.webp') }}" alt="Delicious healthy meal" class="homepage-intro__image">

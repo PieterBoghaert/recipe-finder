@@ -1,6 +1,9 @@
 @use "../util" as *;
 
 @layer layout {
+    @view-transition {
+        navigation: auto;
+    }
     :root {
         /* Container widths */
         --wrapper-size: #{rem(1192)};
@@ -92,5 +95,25 @@
 
     .has-full-line {
         border-block-start: 1px solid var(--c-neutral-300);
+    }
+
+    /* View Transitions - Recipe Images */
+    @supports (view-transition-name: none) {
+        // Customize the transition for recipe images
+        ::view-transition-group(*) {
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        ::view-transition-old(*),
+        ::view-transition-new(*) {
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        // Ensure images maintain aspect ratio during transition
+        [style*="view-transition-name: recipe-image"] {
+            contain: layout;
+        }
     }
 }
