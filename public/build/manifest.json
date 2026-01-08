@@ -1,12 +1,28 @@
 {
+  "public/assets/images/icon-bullet-point.svg": {
+    "file": "assets/icon-bullet-point-yqBo3tnz.svg",
+    "src": "public/assets/images/icon-bullet-point.svg"
+  },
+  "public/assets/images/icon-search.svg": {
+    "file": "assets/icon-search-OEWq3pKa.svg",
+    "src": "public/assets/images/icon-search.svg"
+  },
+  "public/assets/images/pattern-fork.svg": {
+    "file": "assets/pattern-fork-tvM5QHi3.svg",
+    "src": "public/assets/images/pattern-fork.svg"
+  },
+  "public/assets/images/pattern-knife.svg": {
+    "file": "assets/pattern-knife-DODPGWiF.svg",
+    "src": "public/assets/images/pattern-knife.svg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-Ctm6Zbhv.js",
+    "file": "assets/app-DTst7AG7.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-qeBesk87.css",
+    "file": "assets/app-CQiNXyXp.css",
     "src": "resources/scss/app.scss",
     "isEntry": true
   }
