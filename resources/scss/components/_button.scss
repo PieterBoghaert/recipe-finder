@@ -1,0 +1,37 @@
+@use "../util" as *;
+
+@layer components {
+    .btn {
+        display: inline-block;
+        background-color: var(--c-neutral-900);
+        border-radius: var(--br-10);
+        padding: var(--spacing-200) var(--spacing-400);
+        color: var(--c-white);
+        font-weight: var(--fw-bold);
+        transition: background-color var(--transition-base);
+
+        &--card {
+            padding: var(--spacing-150) var(--spacing-400);
+            border-radius: var(--br-9);
+        }
+
+        &--full {
+            inline-size: 100%;
+        }
+
+        &:hover {
+            background-color: var(--c-neutral-800);
+        }
+
+        &:focus {
+            outline-offset: var(--spacing-50);
+            outline-color: var(--c-neutral-900);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+}

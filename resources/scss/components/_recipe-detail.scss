@@ -1,0 +1,129 @@
+@use "../util" as *;
+
+@layer components {
+    .recipe-detail {
+        inline-size: 100%;
+        max-inline-size: var(--wrapper-size);
+        margin-inline: auto;
+        padding-inline: var(--wrapper-padding);
+        padding-block: var(--spacing-600);
+
+        &__breadcrumb {
+            margin-block-end: var(--spacing-200);
+            display: flex;
+            gap: var(--spacing-75);
+
+            a {
+                opacity: 0.6;
+            }
+        }
+
+        &__header {
+            display: grid;
+            gap: var(--spacing-500);
+            margin-block-end: var(--spacing-800);
+
+            @include breakpoint(lg) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        &__title {
+            font-weight: var(--fw-extrabold);
+        }
+
+        &__image-wrapper {
+            inline-size: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: var(--br-10);
+            overflow: hidden;
+            background-color: var(--color-bg-tertiary);
+        }
+
+        &__image {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+        }
+
+        &__header-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-250);
+            font-size: var(--fs-20);
+        }
+
+        &__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-200);
+            font-size: var(--fs-base);
+        }
+
+        &__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-100);
+
+            img {
+                inline-size: #{rem(20)};
+                block-size: #{rem(20)};
+            }
+        }
+
+        &__content {
+            display: grid;
+            gap: var(--spacing-600);
+
+            @include breakpoint(lg) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        &__section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-200);
+
+            .recipe-detail__ingredients,
+            .recipe-detail__instructions {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-100);
+            }
+
+            .recipe-detail__ingredient,
+            .recipe-detail__instruction {
+                position: relative;
+                padding-inline-start: calc(
+                    var(--spacing-300) + var(--spacing-100)
+                );
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset-inline-start: 0;
+                    inset-block-start: var(--spacing-50);
+                    inline-size: var(--spacing-300);
+                    block-size: var(--spacing-300);
+                    background-image: url("/public/assets/images/icon-bullet-point.svg");
+                    background-position: center;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+
+    .recipe-detail__related {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-300);
+        padding-block-start: var(--spacing-800);
+        border-block-start: 1px solid var(--c-neutral-300);
+        &-grid {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(min(var(--card-size), 100%), 1fr)
+            );
+        }
+    }
+}

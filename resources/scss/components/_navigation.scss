@@ -1,0 +1,188 @@
+@use "../util" as *;
+
+@layer components {
+    .navigation {
+        position: relative;
+        inset-block-start: 0;
+        z-index: var(--z-sticky);
+        border-bottom: 1px solid var(--c-neutral-300);
+        padding-inline: var(--spacing-200);
+
+        &__wrapper {
+            max-inline-size: var(--header-wrapper-size);
+            margin-inline: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: var(--spacing-250);
+        }
+
+        &__logo-link {
+            display: block;
+            width: fit-content;
+        }
+
+        &__toggle {
+            display: none;
+        }
+
+        &__hamburger {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: #{rem(5)};
+            cursor: pointer;
+            inline-size: 40px;
+            block-size: 40px;
+            background-color: var(--color-bg-tertiary);
+            border-radius: var(--br-5);
+            margin: 0;
+
+            @include breakpoint(md) {
+                display: none;
+            }
+
+            span {
+                display: block;
+                inline-size: #{rem(18)};
+                block-size: #{rem(2)};
+                background-color: var(--c-neutral-900);
+                border-radius: var(--br-5);
+                transition: all var(--transition-base);
+            }
+        }
+
+        &__menu {
+            position: absolute;
+            inset-block-start: 100%;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
+            background-color: var(--color-surface-primary);
+            border-radius: var(--br-10);
+            padding: var(--spacing-100);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-#{rem(10)});
+            transition: all var(--transition-base);
+
+            @include breakpoint(md) {
+                background-color: transparent;
+                position: static;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--spacing-500);
+                flex-grow: 1;
+                border-block-end: none;
+                padding: 0;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+        }
+
+        &__toggle:checked ~ &__hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(#{rem(5)}, #{rem(5)});
+        }
+
+        &__toggle:checked ~ &__hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &__toggle:checked ~ &__hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(#{rem(5)}, #{rem(-5)});
+        }
+
+        &__toggle:checked ~ &__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        &__item {
+            &--cta {
+                margin-block-start: var(--spacing-125);
+
+                @include breakpoint(md) {
+                    margin-block-start: 0;
+                    margin-inline-start: auto;
+                }
+            }
+        }
+
+        &__link {
+            color: var(--color-text-secondary);
+            font-weight: var(--fw-medium);
+            display: block;
+            inline-size: 100%;
+            padding-block: var(--spacing-50);
+            border-radius: var(--br-10);
+            transition: all var(--transition-fast);
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset-inline-start: 0;
+                inset-inline-end: 0;
+                bottom: 0;
+                height: 3px;
+                background-color: var(--c-orange-500);
+                border-radius: var(--br-4);
+                opacity: 0;
+            }
+
+            @include breakpoint(md) {
+                display: inline-block;
+                inline-size: auto;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &--active {
+            }
+        }
+
+        &__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            inline-size: 100%;
+            padding: var(--spacing-150) var(--spacing-300);
+            background-color: var(--c-primary-600);
+            color: var(--c-white);
+            font-weight: var(--fw-semibold);
+            border-radius: var(--br-10);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+
+            @include breakpoint(md) {
+                inline-size: auto;
+            }
+
+            &:hover {
+                background-color: var(--c-primary-700);
+                transform: translateY(-#{rem(1)});
+                box-shadow: var(--shadow-md);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    @include breakpoint(md) {
+        .navigation {
+            &__logo {
+                flex-grow: 1;
+            }
+        }
+    }
+}

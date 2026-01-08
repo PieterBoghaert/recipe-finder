@@ -1,0 +1,135 @@
+@use "../util" as *;
+
+@layer components {
+    .filters {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-200);
+        margin-block-end: var(--spacing-500);
+
+        @include breakpoint(sm) {
+            align-items: flex-end;
+            flex-direction: row;
+        }
+
+        &__group {
+            min-width: #{rem(150)};
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-100);
+
+            @include breakpoint(sm) {
+                &--search {
+                    margin-inline-start: auto;
+                    min-inline-size: #{rem(278)};
+                }
+            }
+        }
+
+        &__input,
+        &__select {
+            inline-size: 100%;
+            padding: var(--spacing-125) var(--spacing-200);
+            background-color: var(--color-surface-primary);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--br-10);
+            font-weight: var(--fw-semibold);
+            transition: all var(--transition-fast);
+
+            &:hover {
+                border-color: var(--color-border-hover);
+            }
+
+            &:focus {
+                outline: none;
+                border-color: var(--c-primary-600);
+                box-shadow: 0 0 0 3px
+                    oklch(from var(--c-primary-600) l c h / 0.1);
+            }
+
+            &::placeholder {
+                color: var(--color-text-tertiary);
+            }
+        }
+
+        &__input {
+            background-image: url("../../public/assets/images/icon-search.svg");
+            background-repeat: no-repeat;
+            background-position: left var(--spacing-200) center;
+            padding-inline-start: var(--spacing-600);
+        }
+
+        &__select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right var(--spacing-150) center;
+            background-repeat: no-repeat;
+            background-size: #{rem(20)} #{rem(20)};
+            padding-inline-end: var(--spacing-500);
+
+            // Opt-in to customizable select API
+            &--custom {
+                appearance: base-select;
+            }
+        }
+
+        // Styles for customizable select (only apply when base-select is supported)
+        &__select--custom {
+            // Style the picker dropdown
+            &::picker(select) {
+                appearance: base-select;
+                background-color: var(--color-surface-primary);
+                border: 1px solid var(--color-border-primary);
+                border-radius: var(--br-10);
+                box-shadow: var(--shadow-lg);
+                padding: var(--spacing-100);
+                margin-block-start: var(--spacing-50);
+            }
+
+            // Style the dropdown icon
+            &::picker-icon {
+                display: none;
+            }
+
+            // Style options in the picker
+            & option {
+                display: flex;
+                align-items: center;
+                gap: var(--spacing-150);
+                padding: var(--spacing-150) var(--spacing-200);
+                cursor: pointer;
+                border-radius: var(--br-5);
+                transition: background-color var(--transition-fast);
+
+                &:hover {
+                    background-color: var(--color-surface-secondary);
+                }
+
+                // Style checked options
+                &:checked {
+                    background-color: var(--color-surface-secondary);
+                    font-weight: var(--fw-medium);
+                }
+            }
+
+            // Style when select is open
+            &:open {
+                border-color: var(--c-primary-600);
+                box-shadow: 0 0 0 3px
+                    oklch(from var(--c-primary-600) l c h / 0.1);
+            }
+        }
+
+        &__actions {
+            display: flex;
+            align-items: flex-end;
+            gap: var(--spacing-150);
+        }
+
+        &__clear {
+            white-space: nowrap;
+        }
+    }
+}
