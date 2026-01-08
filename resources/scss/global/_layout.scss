@@ -89,4 +89,8 @@
     footer {
         flex-shrink: 0;
     }
+
+    .has-full-line {
+        border-block-start: 1px solid var(--c-neutral-300);
+    }
 }

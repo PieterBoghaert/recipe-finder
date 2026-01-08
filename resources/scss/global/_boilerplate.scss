@@ -74,7 +74,7 @@
         --spacing-600: #{rem(48)};
         --spacing-700: #{rem(56)};
         --spacing-800: #{rem(64)};
-        --spacing-900: #{rem(80)};
+        --spacing-1000: #{rem(80)};
         --spacing-1200: #{rem(96)};
 
         /* Border radius */
@@ -93,6 +93,7 @@
             0 4px 6px -4px rgb(0 0 0 / 0.1);
         --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
             0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --shadow-white: 0 0 0 #{rem(12)} var(--c-white);
 
         /* Transitions */
         --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

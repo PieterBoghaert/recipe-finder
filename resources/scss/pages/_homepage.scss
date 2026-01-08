@@ -1,0 +1,118 @@
+@use "../util" as *;
+
+.homepage-intro {
+    text-align: center;
+    margin-block: var(--spacing-1000) var(--spacing-1200);
+
+    &__title {
+        font-weight: var(--fw-extrabold);
+        margin-block-end: var(--spacing-150);
+    }
+
+    &__description {
+        margin-block-end: var(--spacing-500);
+    }
+
+    &__btn {
+        margin-block-end: var(--spacing-1000);
+    }
+
+    &__image-wrapper {
+        inline-size: 100%;
+        border-radius: var(--br-12);
+        overflow: clip;
+        box-shadow: var(--shadow-white);
+    }
+}
+
+.homepage-features {
+    margin-block-end: var(--spacing-800);
+    h2 {
+        text-align: center;
+    }
+
+    &__grid {
+        display: grid;
+        gap: var(--spacing-250);
+        margin-block-start: var(--spacing-400);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: var(--spacing-300);
+
+        p {
+            margin-block-start: calc(var(--spacing-150) * -1);
+        }
+    }
+
+    &__icon-wrapper {
+        background-color: var(--c-white);
+        padding: var(--spacing-50) var(--spacing-100);
+        border-radius: var(--br-12);
+        flex-grow: 1;
+        display: flex;
+        place-items: center;
+    }
+}
+
+.homepage-reallife {
+    padding-block-start: var(--spacing-800);
+    margin-block: 0 var(--spacing-800);
+
+    &__grid {
+        display: grid;
+        gap: var(--spacing-400);
+    }
+
+    img {
+        border-radius: var(--br-16);
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-250);
+    }
+}
+
+@include breakpoint(md) {
+    .homepage-features {
+        margin-block-end: var(--spacing-1000);
+        &__grid {
+            gap: var(--spacing-400);
+            margin-block-start: var(--spacing-600);
+        }
+    }
+
+    .homepage-reallife {
+        padding-block-start: var(--spacing-1000);
+        margin-block: 0 var(--spacing-1000);
+
+        &__grid {
+            gap: var(--spacing-500);
+        }
+    }
+}
+
+@include breakpoint(lg) {
+    .homepage-features {
+        margin-block-end: var(--spacing-1200);
+        &__grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .homepage-reallife {
+        padding-block-start: var(--spacing-1200);
+        margin-block: 0 var(--spacing-1200);
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-600);
+            align-items: center;
+        }
+    }
+}

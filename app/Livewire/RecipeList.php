@@ -30,11 +30,11 @@ class RecipeList extends Component
             $query->search($this->searchTerm);
         }
 
-        if ($this->maxPrepTime) {
+        if ($this->maxPrepTime !== null && $this->maxPrepTime !== '') {
             $query->maxPrepTime($this->maxPrepTime);
         }
 
-        if ($this->maxCookTime) {
+        if ($this->maxCookTime !== null && $this->maxCookTime !== '') {
             $query->maxCookTime($this->maxCookTime);
         }
 
@@ -46,13 +46,21 @@ class RecipeList extends Component
         $this->resetPage();
     }
 
-    public function updatingMaxPrepTime()
+    public function updatedMaxPrepTime($value)
     {
+        // Convert empty string to null to remove from URL
+        if ($value === '' || $value === null) {
+            $this->maxPrepTime = null;
+        }
         $this->resetPage();
     }
 
-    public function updatingMaxCookTime()
+    public function updatedMaxCookTime($value)
     {
+        // Convert empty string to null to remove from URL
+        if ($value === '' || $value === null) {
+            $this->maxCookTime = null;
+        }
         $this->resetPage();
     }
 

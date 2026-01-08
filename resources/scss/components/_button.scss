@@ -2,6 +2,7 @@
 
 @layer components {
     .btn {
+        display: inline-block;
         background-color: var(--c-neutral-900);
         border-radius: var(--br-10);
         padding: var(--spacing-200) var(--spacing-400);

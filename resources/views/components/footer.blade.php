@@ -1,4 +1,4 @@
-<footer class="footer" role="contentinfo">
+<footer class="footer {{ in_array(request()->route()->getName(), ['recipes', 'recipe.show']) ? 'has-full-line' : '' }}" role="contentinfo">
     <div class="wrapper">
         <div class="footer__content">
             {{-- Footer Text --}}

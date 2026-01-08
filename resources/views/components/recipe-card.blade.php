@@ -36,10 +36,7 @@
                     <img width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-cook-time.svg') }}" alt="Cook Time Icon" />
                     Cook: {{ $recipe->cook_minutes }}m
                 </span>
-                <!-- <span class="recipe-card__meta-item">
-                    <img width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-ingredients.svg') }}" alt="Ingredients Icon" />
-                    {{ $recipe->ingredient_count }} ingredients
-                </span> -->
+
             </div>
         </div>
         {{-- View Recipe Button --}}

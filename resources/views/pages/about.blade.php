@@ -17,6 +17,8 @@
         <p>Learn more about our recipe collection.</p>
     </main>
 
+    <x-cta />
+
     <x-footer />
 
     @livewireScripts
