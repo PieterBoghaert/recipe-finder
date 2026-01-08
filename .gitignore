@@ -1,0 +1,9 @@
+node_modules
+.vite
+.vscode
+.DS_Store
+/storage/*.key
+vendor
+*.log
+.env
+cache
