@@ -8,7 +8,8 @@
         padding: var(--spacing-200) var(--spacing-400);
         color: var(--c-white);
         font-weight: var(--fw-bold);
-        transition: background-color var(--transition-base);
+        transition: background-color var(--transition-base),
+            transform var(--transition-base);
 
         &--card {
             padding: var(--spacing-150) var(--spacing-400);
@@ -21,6 +22,7 @@
 
         &:hover {
             background-color: var(--c-neutral-800);
+            transform: translateY(var(--spacing-25));
         }
 
         &:focus {

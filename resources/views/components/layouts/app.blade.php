@@ -20,7 +20,9 @@
 <body>
     <x-navigation />
 
-    {{ $slot }}
+    <main class="site-content {{ $pageClass ?? '' }}">
+        {{ $slot }}
+    </main>
 
     <x-footer />
 

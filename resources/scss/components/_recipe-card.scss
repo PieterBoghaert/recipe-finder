@@ -12,7 +12,7 @@
         &:hover {
             transform: translateY(-#{rem(4)});
             box-shadow: var(--shadow-lg);
-            border-color: var(--color-border-hover);
+            border-color: var(--c-neutral-200);
         }
 
         &__link {
@@ -88,6 +88,11 @@
             &.btn {
                 border-radius: var(--br-round);
                 padding-block: var(--spacing-150);
+                text-align: center;
+
+                &:hover {
+                    transform: none;
+                }
             }
         }
     }

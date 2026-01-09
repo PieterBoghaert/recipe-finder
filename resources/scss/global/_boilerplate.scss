@@ -61,6 +61,7 @@
 @layer global {
     :root {
         /* Spacing scale */
+        --spacing-25: #{rem(2)};
         --spacing-50: #{rem(4)};
         --spacing-75: #{rem(6)};
         --spacing-100: #{rem(8)};
@@ -79,6 +80,7 @@
 
         /* Border radius */
         --br-4: #{rem(4)};
+        --br-6: #{rem(6)};
         --br-8: #{rem(8)};
         --br-9: #{rem(9)};
         --br-10: #{rem(10)};
@@ -89,8 +91,9 @@
         /* Shadows */
         --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
         --shadow-md: 0 12px 22px -12px var(--c-neutral-300);
-        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-            0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px oklch(from var(--c-neutral-900) l c h /
+                        0.1),
+            0 4px 6px -4px oklch(from var(--c-neutral-900) l c h / 0.1);
         --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
             0 8px 10px -6px rgb(0 0 0 / 0.1);
         --shadow-white: 0 0 0 #{rem(12)} var(--c-white);

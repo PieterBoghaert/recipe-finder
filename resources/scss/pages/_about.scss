@@ -1,0 +1,145 @@
+@use "../util" as *;
+
+.about-mission {
+    margin-block-end: var(--spacing-800);
+
+    &__grid {
+        display: grid;
+        align-items: center;
+        gap: var(--spacing-500);
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-300);
+    }
+
+    &__tag {
+        padding-block: var(--spacing-25);
+        padding-inline: var(--spacing-75);
+        background-color: var(--c-orange-500);
+        border-radius: var(--br-6);
+        align-self: flex-start;
+        display: inline-flex;
+    }
+
+    &__figure {
+        border-radius: var(--br-16);
+        overflow: hidden;
+    }
+}
+
+.about-beyond,
+.about-whyweexist,
+.about-philosophy {
+    margin-block-end: var(--spacing-600);
+    &__grid {
+        display: grid;
+        gap: var(--spacing-500);
+    }
+}
+
+.about-whyweexist,
+.about-philosophy {
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-300);
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-150);
+
+        dt {
+            position: relative;
+            padding-inline-start: calc(var(--spacing-400) + var(--spacing-250));
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset-inline-start: 0;
+                inset-block-start: 50%;
+                transform: translateY(-50%);
+                inline-size: var(--spacing-400);
+                block-size: var(--spacing-400);
+                background-image: url("/public/assets/images/icon-bullet-point.svg");
+                background-position: center;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+.about-beyond {
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-250);
+    }
+
+    &__list {
+        margin-block-start: calc(var(--spacing-100) * -1);
+        list-style: disc;
+        padding-inline-start: var(--spacing-300);
+    }
+
+    &__figure {
+        border-radius: var(--br-16);
+        overflow: hidden;
+    }
+}
+
+@include breakpoint(md) {
+    .about-mission {
+        margin-block-end: var(--spacing-1000);
+
+        &__grid {
+            gap: var(--spacing-800);
+        }
+    }
+
+    .about-beyond,
+    .about-whyweexist,
+    .about-philosophy {
+        margin-block: var(--spacing-1000);
+        &__grid {
+            display: grid;
+            gap: var(--spacing-800);
+        }
+    }
+
+    .about-whyweexist,
+    .about-philosophy {
+        &__text {
+            gap: var(--spacing-400);
+        }
+    }
+}
+
+@include breakpoint(lg) {
+    .about-mission {
+        margin-block-end: var(--spacing-1200);
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .about-beyond,
+    .about-whyweexist,
+    .about-philosophy {
+        margin-block: var(--spacing-1200);
+        &__grid {
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+
+    .about-whyweexist,
+    .about-philosophy {
+        &__text {
+            gap: var(--spacing-600);
+        }
+    }
+}

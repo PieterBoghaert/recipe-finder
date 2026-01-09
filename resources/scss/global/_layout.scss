@@ -89,6 +89,18 @@
         flex: 1 0 auto;
     }
 
+    .site-content {
+        margin-block-start: var(--spacing-600);
+
+        @include breakpoint(md) {
+            margin-block-start: var(--spacing-800);
+        }
+
+        @include breakpoint(lg) {
+            margin-block-start: var(--spacing-1000);
+        }
+    }
+
     footer {
         flex-shrink: 0;
     }

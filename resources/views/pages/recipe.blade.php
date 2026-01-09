@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layouts.app title="{{ $slug }} - Recipe Finder" pageClass="page-recipe">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $slug }} - Recipe Finder</title>
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-    @livewireStyles
-</head>
+    <livewire:recipe-detail :slug="$slug" />
 
-<body>
-    <x-navigation />
-
-    <main class="container">
-        <livewire:recipe-detail :slug="$slug" />
-    </main>
-
-    <x-footer />
-
-    @livewireScripts
-</body>
-
-</html>
+</x-layouts.app>

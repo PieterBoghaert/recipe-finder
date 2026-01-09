@@ -1,12 +1,17 @@
 @use "../util" as *;
 
+@layer layout {
+    .page-recipe {
+        margin-block-start: var(--spacing-600);
+    }
+}
+
 @layer components {
     .recipe-detail {
         inline-size: 100%;
         max-inline-size: var(--wrapper-size);
         margin-inline: auto;
         padding-inline: var(--wrapper-padding);
-        padding-block: var(--spacing-600);
 
         &__breadcrumb {
             margin-block-end: var(--spacing-200);

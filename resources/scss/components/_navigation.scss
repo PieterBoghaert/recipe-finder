@@ -130,7 +130,9 @@
                 height: 3px;
                 background-color: var(--c-orange-500);
                 border-radius: var(--br-4);
-                opacity: 0;
+
+                inline-size: 0;
+                transition: inline-size var(--transition-base);
             }
 
             @include breakpoint(md) {
@@ -140,7 +142,7 @@
 
             &:hover {
                 &::after {
-                    opacity: 1;
+                    inline-size: 100%;
                 }
             }
 
