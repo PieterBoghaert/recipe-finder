@@ -130,7 +130,6 @@
                 height: 3px;
                 background-color: var(--c-orange-500);
                 border-radius: var(--br-4);
-
                 inline-size: 0;
                 transition: inline-size var(--transition-base);
             }
@@ -147,6 +146,19 @@
             }
 
             &--active {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset-inline-start: 0;
+                    inset-inline-end: 0;
+                    bottom: 0;
+                    height: 3px;
+                    background-color: var(--c-orange-500);
+                    border-radius: var(--br-4);
+                    inline-size: 100%;
+                }
             }
         }
 

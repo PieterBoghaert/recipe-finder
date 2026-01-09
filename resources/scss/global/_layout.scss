@@ -1,9 +1,6 @@
 @use "../util" as *;
 
 @layer layout {
-    @view-transition {
-        navigation: auto;
-    }
     :root {
         /* Container widths */
         --wrapper-size: #{rem(1192)};
@@ -25,6 +22,11 @@
         --z-tooltip: 700;
 
         --card-size: #{rem(360)};
+    }
+
+    ::selection {
+        background-color: var(--c-neutral-900);
+        color: var(--c-white);
     }
 
     .wrapper {
