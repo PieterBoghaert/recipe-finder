@@ -14,7 +14,9 @@
                 src="{{ asset($recipe->image_small) }}"
                 alt="{{ $recipe->title }}"
                 class="recipe-detail__image"
-                style="view-transition-name: recipe-image-{{ $recipe->slug }};">
+                style="view-transition-name: recipe-image-{{ $recipe->slug }};"
+                width="500"
+                height="500">
         </picture>
 
         <div class="recipe-detail__header-content">
@@ -27,15 +29,15 @@
             {{-- Recipe Meta --}}
             <div class="recipe-detail__meta">
                 <div class="recipe-detail__meta-item">
-                    <img src="{{ asset('assets/images/icon-servings.svg') }}" alt="Servings Icon" aria-hidden="true">
+                    <img src="{{ asset('assets/images/icon-servings.svg') }}" alt="Servings Icon" aria-hidden="true" width="16" height="16">
                     <span>Servings: {{ $recipe->servings }}</span>
                 </div>
                 <div class="recipe-detail__meta-item">
-                    <img src="{{ asset('assets/images/icon-prep-time.svg') }}" alt="Prep Time Icon" aria-hidden="true">
+                    <img src="{{ asset('assets/images/icon-prep-time.svg') }}" alt="Prep Time Icon" aria-hidden="true" width="16" height="16">
                     <span>Preps: {{ $recipe->prep_minutes }} min</span>
                 </div>
                 <div class="recipe-detail__meta-item">
-                    <img src="{{ asset('assets/images/icon-cook-time.svg') }}" alt="Cook Time Icon" aria-hidden="true">
+                    <img src="{{ asset('assets/images/icon-cook-time.svg') }}" alt="Cook Time Icon" aria-hidden="true" width="16" height="16">
                     <span>Cook: {{ $recipe->cook_minutes }} min</span>
                 </div>
             </div>

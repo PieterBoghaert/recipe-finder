@@ -2,56 +2,56 @@
 // Enable smooth transitions between pages with wire:navigate
 
 @layer global {
-  // Enable view transitions for navigation
-  @view-transition {
-    navigation: auto;
-  }
-
-  // Default transition for all elements (fade)
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0.3s;
-  }
-
-  // Smooth crossfade for images with view-transition-name
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-  }
-
-  // Recipe images get special morphing transition
-  ::view-transition-old(recipe-image),
-  ::view-transition-new(recipe-image) {
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  // Customize the transition styles
-  ::view-transition-group(*) {
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-  }
-
-  // Smooth opacity transition for old page going out
-  ::view-transition-old(root) {
-    animation-name: fade-out;
-  }
-
-  // Smooth opacity transition for new page coming in
-  ::view-transition-new(root) {
-    animation-name: fade-in;
-  }
-
-  @keyframes fade-out {
-    to {
-      opacity: 0;
+    // Enable view transitions for navigation
+    @view-transition {
+        navigation: auto;
     }
-  }
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
+    // Default transition for all elements (fade)
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.3s;
     }
-  }
+
+    // Smooth crossfade for images with view-transition-name
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+    }
+
+    // Recipe images get special morphing transition
+    ::view-transition-old(recipe-image),
+    ::view-transition-new(recipe-image) {
+        animation-duration: 0.6s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    // Customize the transition styles
+    ::view-transition-group(*) {
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+    }
+
+    // Smooth opacity transition for old page going out
+    ::view-transition-old(root) {
+        animation-name: fade-out;
+    }
+
+    // Smooth opacity transition for new page coming in
+    ::view-transition-new(root) {
+        animation-name: fade-in;
+    }
+
+    @keyframes fade-out {
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
 }

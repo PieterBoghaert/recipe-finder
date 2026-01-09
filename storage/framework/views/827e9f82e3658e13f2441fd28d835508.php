@@ -16,7 +16,7 @@
             <a href="<?php echo e(url('/recipes')); ?>" class="btn homepage-intro__btn" wire:navigate>Start exploring</a>
             <picture class="homepage-intro__image-wrapper">
                 <source srcset="<?php echo e(asset('assets/images/image-home-hero-large.webp')); ?>" media="(min-width: 640px)">
-                <img src="<?php echo e(asset('assets/images/image-home-hero-small.webp')); ?>" alt="Delicious healthy meal" class="homepage-intro__image">
+                <img src="<?php echo e(asset('assets/images/image-home-hero-small.webp')); ?>" alt="Delicious healthy meal" class="homepage-intro__image" width="686" height="400">
             </picture>
         </div>
     </section>
@@ -60,7 +60,7 @@
                 <div class="homepage-reallife__image">
                     <picture>
                         <source srcset="<?php echo e(asset('assets/images/image-home-real-life-large.webp')); ?>" media="(min-width: 640px)">
-                        <img src="<?php echo e(asset('assets/images/image-home-real-life-small.webp')); ?>" alt="Person cooking in a kitchen" class="homepage-reallife__img">
+                        <img src="<?php echo e(asset('assets/images/image-home-real-life-small.webp')); ?>" alt="Person cooking in a kitchen" class="homepage-reallife__img" width="800" height="600">
                     </picture>
                 </div>
             </div>
@@ -97,5 +97,4 @@
 <?php if (isset($__componentOriginal5863877a5171c196453bfa0bd807e410)): ?>
 <?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
 <?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
-<?php endif; ?>
-<?php /**PATH /Users/boghaert/sites/vulpo/recipe-finder/resources/views/pages/home.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH /Users/boghaert/sites/vulpo/recipe-finder/resources/views/pages/home.blade.php ENDPATH**/ ?>

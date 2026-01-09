@@ -11,6 +11,8 @@
                     alt="{{ $recipe->title }}"
                     class="recipe-card__image"
                     style="view-transition-name: recipe-image-{{ $recipe->slug }};"
+                    width="1024"
+                    height="1024"
                     loading="lazy">
             </picture>
         </div>

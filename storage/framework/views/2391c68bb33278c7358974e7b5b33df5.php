@@ -39,6 +39,8 @@ unset($__defined_vars); ?>
                     alt="<?php echo e($recipe->title); ?>"
                     class="recipe-card__image"
                     style="view-transition-name: recipe-image-<?php echo e($recipe->slug); ?>;"
+                    width="1024"
+                    height="1024"
                     loading="lazy">
             </picture>
         </div>

@@ -7,7 +7,7 @@
             <a href="{{ url('/recipes') }}" class="btn homepage-intro__btn" wire:navigate>Start exploring</a>
             <picture class="homepage-intro__image-wrapper">
                 <source srcset="{{ asset('assets/images/image-home-hero-large.webp') }}" media="(min-width: 640px)">
-                <img src="{{ asset('assets/images/image-home-hero-small.webp') }}" alt="Delicious healthy meal" class="homepage-intro__image">
+                <img src="{{ asset('assets/images/image-home-hero-small.webp') }}" alt="Delicious healthy meal" class="homepage-intro__image" width="686" height="400">
             </picture>
         </div>
     </section>
@@ -51,7 +51,7 @@
                 <div class="homepage-reallife__image">
                     <picture>
                         <source srcset="{{ asset('assets/images/image-home-real-life-large.webp') }}" media="(min-width: 640px)">
-                        <img src="{{ asset('assets/images/image-home-real-life-small.webp') }}" alt="Person cooking in a kitchen" class="homepage-reallife__img">
+                        <img src="{{ asset('assets/images/image-home-real-life-small.webp') }}" alt="Person cooking in a kitchen" class="homepage-reallife__img" width="800" height="600">
                     </picture>
                 </div>
             </div>

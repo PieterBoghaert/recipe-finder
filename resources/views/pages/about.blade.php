@@ -13,7 +13,7 @@
                 <div class="about-mission__figure">
                     <picture>
                         <source srcset="{{ asset('assets/images/image-about-our-mission-large.webp') }}" media="(min-width: 640px)">
-                        <img src="{{ asset('assets/images/image-about-our-mission-small.webp') }}" alt="Delicious healthy meal" class="about-mission__image">
+                        <img src="{{ asset('assets/images/image-about-our-mission-small.webp') }}" alt="Delicious healthy meal" class="about-mission__image" width="686" height="667">
                     </picture>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="about-beyond__figure">
                     <picture>
                         <source srcset="{{ asset('assets/images/image-about-beyond-the-plate-large.webp') }}" media="(min-width: 640px)">
-                        <img src="{{ asset('assets/images/image-about-beyond-the-plate-small.webp') }}" alt="Delicious healthy meal" class="about-beyond__image">
+                        <img src="{{ asset('assets/images/image-about-beyond-the-plate-small.webp') }}" alt="Delicious healthy meal" class="about-beyond__image" width="686" height="369">
                     </picture>
                 </div>
             </div>
