@@ -30,6 +30,6 @@
         "SESSION_DRIVER": "cookie",
         "DB_CONNECTION": "pgsql",
         "ASSET_URL": "https://recipe-finder-ten-livid.vercel.app",
-        "DB_URL": "postgresql://postgres:recipe-finder-vulpo@db.zakyyxigmgpvlrlpaqwx.supabase.co:5432/postgres"
+        "DB_URL": "postgresql://postgres.zakyyxigmgpvlrlpaqwx:recipe-finder-vulpo@aws-1-eu-west-1.pooler.supabase.com:6543/postgres"
     }
 }
