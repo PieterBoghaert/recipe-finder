@@ -1,0 +1,116 @@
+// One-time animations (triggered via Intersection Observer)
+// These animations only play once when elements enter viewport
+
+// Hide elements initially (only when JS is available and user allows motion)
+@media (prefers-reduced-motion: no-preference) {
+    .animate-on-scroll {
+        opacity: 0;
+    }
+}
+
+// Animation variants
+.animate-fade-in.is-visible {
+    animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up.is-visible {
+    animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.animate-fade-in-down.is-visible {
+    animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left.is-visible {
+    animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right.is-visible {
+    animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-scale-in.is-visible {
+    animation: scale-in 0.6s ease-out forwards;
+}
+
+// Stagger delays for multiple elements (apply to animated elements)
+.animate-delay-1.is-visible {
+    animation-delay: 0.1s;
+}
+.animate-delay-2.is-visible {
+    animation-delay: 0.2s;
+}
+.animate-delay-3.is-visible {
+    animation-delay: 0.3s;
+}
+.animate-delay-4.is-visible {
+    animation-delay: 0.4s;
+}
+.animate-delay-5.is-visible {
+    animation-delay: 0.5s;
+}
+
+// Keyframes
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

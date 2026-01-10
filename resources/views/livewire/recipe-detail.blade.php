@@ -8,7 +8,7 @@
 
     {{-- Recipe Header --}}
     <div class="recipe-detail__header">
-        <picture class="recipe-detail__image-wrapper">
+        <picture class="recipe-detail__image-wrapper animate-on-scroll animate-scale-in">
             <source srcset="{{ asset($recipe->image_large) }}" media="(min-width: 640px)">
             <img
                 src="{{ asset($recipe->image_small) }}"
@@ -19,7 +19,7 @@
                 height="500">
         </picture>
 
-        <div class="recipe-detail__header-content">
+        <div class="recipe-detail__header-content animate-on-scroll animate-fade-in-up animate-delay-1">
             <h1 class="recipe-detail__title h2">{{ $recipe->title }}</h1>
 
             @if($recipe->overview)

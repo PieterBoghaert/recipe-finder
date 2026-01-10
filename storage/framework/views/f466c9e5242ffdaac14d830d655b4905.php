@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Recipes - Recipe Finder','pageClass' => 'page-recipes']); ?>
 
-    <div class="recipes-intro wrapper">
+    <div class="recipes-intro wrapper animate-on-scroll animate-fade-in">
         <h1 class="h2">Explore our simple, healthy recipes</h1>
         <p>Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
     </div>

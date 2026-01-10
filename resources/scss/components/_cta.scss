@@ -3,6 +3,7 @@
 @layer components {
     .cta {
         inline-size: 100%;
+
         &__content {
             display: flex;
             flex-direction: column;
@@ -31,6 +32,28 @@
             font-size: var(--fs-18);
             color: var(--color-text-secondary);
             max-inline-size: #{rem(600)};
+        }
+    }
+
+    // Scroll-driven animations (only when user hasn't requested reduced motion)
+    @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: view()) {
+            .cta {
+                animation: fade-in-up linear both;
+                animation-timeline: view();
+                animation-range: entry 0% cover 30%;
+            }
+
+            @keyframes fade-in-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(#{rem(40)});
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         }
     }
 

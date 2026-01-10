@@ -15,14 +15,22 @@
     "file": "assets/pattern-knife-DODPGWiF.svg",
     "src": "public/assets/images/pattern-knife.svg"
   },
+  "public/assets/images/pattern-squiggle-1.svg": {
+    "file": "assets/pattern-squiggle-1-BAquxcMG.svg",
+    "src": "public/assets/images/pattern-squiggle-1.svg"
+  },
+  "public/assets/images/pattern-squiggle-2.svg": {
+    "file": "assets/pattern-squiggle-2-JnynTvMe.svg",
+    "src": "public/assets/images/pattern-squiggle-2.svg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-B0xNZoaO.js",
+    "file": "assets/app-Q7Ex5eUz.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-CzGmQWg7.css",
+    "file": "assets/app-DTpcklcg.css",
     "src": "resources/scss/app.scss",
     "isEntry": true
   }
