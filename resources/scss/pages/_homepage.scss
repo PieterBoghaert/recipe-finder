@@ -3,10 +3,51 @@
 .homepage-intro {
     text-align: center;
     margin-block-end: var(--spacing-1200);
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../../public/assets/images/pattern-squiggle-1.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
 
     &__title {
         font-weight: var(--fw-extrabold);
         margin-block-end: var(--spacing-150);
+
+        span {
+            position: relative;
+            padding-inline: var(--spacing-150);
+            margin-inline-end: calc(var(--spacing-150) * -1);
+            anchor-name: --title-span;
+            white-space: nowrap;
+
+            &::before {
+                content: "";
+                background-color: var(--c-orange-500);
+                opacity: 0.4;
+                border-radius: var(--br-4);
+                z-index: -1;
+                position: absolute;
+                inset-inline-start: 0;
+                inset-inline-end: 0;
+                inset-block-start: 50%;
+                inset-block-end: 10px;
+
+                @supports (anchor-name: --title-span) {
+                    position: absolute;
+                    position-anchor: --title-span;
+                    inset-inline-start: anchor(left);
+                    inset-inline-end: anchor(right);
+                    inset-block-start: anchor(center);
+                    inset-block-end: calc(anchor(bottom) + 10px);
+                }
+            }
+        }
     }
 
     &__description {
@@ -22,6 +63,8 @@
         border-radius: var(--br-12);
         overflow: clip;
         box-shadow: var(--shadow-white);
+        z-index: 1;
+        position: relative;
     }
 
     &__image {
@@ -82,6 +125,36 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-250);
+
+        span {
+            position: relative;
+            padding-inline: var(--spacing-50);
+            margin-inline-end: calc(var(--spacing-50) * -1);
+            anchor-name: --minutes-span;
+            white-space: nowrap;
+            font-weight: var(--fw-extrabold);
+
+            &::before {
+                content: "";
+                background-color: var(--c-orange-500);
+                border-radius: var(--br-4);
+                z-index: -1;
+                position: absolute;
+                inset-inline-start: 0;
+                inset-inline-end: 0;
+                inset-block-start: 35%;
+                inset-block-end: 10px;
+
+                @supports (anchor-name: --minutes-span) {
+                    position: absolute;
+                    position-anchor: --minutes-span;
+                    inset-inline-start: anchor(left);
+                    inset-inline-end: anchor(right);
+                    inset-block-start: calc(anchor(top) + 40%);
+                    inset-block-end: anchor(bottom);
+                }
+            }
+        }
     }
 }
 

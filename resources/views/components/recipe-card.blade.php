@@ -28,15 +28,15 @@
             {{-- Recipe Meta --}}
             <div class="recipe-card__meta">
                 <span class="recipe-card__meta-item">
-                    <img width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-servings.svg') }}" alt="Servings Icon" />
+                    <img width="21" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-servings.svg') }}" alt="Servings Icon" />
                     {{ $recipe->servings }} servings
                 </span>
                 <span class="recipe-card__meta-item">
-                    <img width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-prep-time.svg') }}" alt="Prep Time Icon" />
+                    <img width="21" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-prep-time.svg') }}" alt="Prep Time Icon" />
                     Prep: {{ $recipe->prep_minutes }}m
                 </span>
                 <span class="recipe-card__meta-item">
-                    <img width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-cook-time.svg') }}" alt="Cook Time Icon" />
+                    <img width="21" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" src="{{ asset('assets/images/icon-cook-time.svg') }}" alt="Cook Time Icon" />
                     Cook: {{ $recipe->cook_minutes }}m
                 </span>
 

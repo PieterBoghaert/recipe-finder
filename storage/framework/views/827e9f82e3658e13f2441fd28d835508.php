@@ -11,7 +11,7 @@
 
     <section class="homepage-intro">
         <div class="wrapper">
-            <h1 class="homepage-intro__title">Healthy meals, zero fuss</h1>
+            <h1 class="homepage-intro__title"><span>Healthy</span> meals, zero fuss</h1>
             <p class="homepage-intro__description">Discover eight quick, whole-food recipes that you can cook tonight—no processed junk, no guesswork.</p>
             <a href="<?php echo e(url('/recipes')); ?>" class="btn homepage-intro__btn" wire:navigate>Start exploring</a>
             <picture class="homepage-intro__image-wrapper">
@@ -54,7 +54,7 @@
             <div class="homepage-reallife__grid">
                 <div class="homepage-reallife__text">
                     <h2>Built for real life</h2>
-                    <p>Cooking shouldn't be complicated. These recipes come in under 30 minutes of active time, fit busy schedules, and taste good enough to repeat. </p>
+                    <p>Cooking shouldn't be complicated. These recipes come in under <span>30 minutes</span> of active time, fit busy schedules, and taste good enough to repeat. </p>
                     <p>Whether you're new to the kitchen or just need fresh ideas, we've got you covered.</p>
                 </div>
                 <div class="homepage-reallife__image">

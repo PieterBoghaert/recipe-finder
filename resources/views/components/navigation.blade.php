@@ -8,7 +8,7 @@
         {{-- Logo --}}
         <div class="navigation__logo">
             <a href="{{ route('home') }}" class="navigation__logo-link" wire:navigate>
-                <img src="{{ asset('assets/images/logo.svg') }}" alt="Recipe Finder" width="195" height="40">
+                <img src="{{ asset('assets/images/logo.svg') }}" alt="Recipe Finder" width="260" height="40">
             </a>
         </div>
         {{-- Mobile Menu Toggle (Checkbox Hack) --}}

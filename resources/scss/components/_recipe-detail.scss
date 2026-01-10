@@ -125,6 +125,11 @@
         gap: var(--spacing-300);
         padding-block-start: var(--spacing-800);
         border-block-start: 1px solid var(--c-neutral-300);
+        margin-block-end: var(--spacing-600);
+
+        @include breakpoint(lg) {
+            margin-block-end: var(--spacing-1200);
+        }
         &-grid {
             grid-template-columns: repeat(
                 auto-fill,

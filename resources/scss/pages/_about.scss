@@ -24,9 +24,9 @@
         display: inline-flex;
     }
 
-    &__figure {
+    &__image {
         border-radius: var(--br-16);
-        overflow: hidden;
+        overflow: clip;
     }
 }
 
@@ -102,6 +102,22 @@
 
         &__grid {
             gap: var(--spacing-800);
+        }
+
+        &__figure {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url("../../public/assets/images/pattern-squiggle-2.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                inline-size: 118px;
+                block-size: 90px;
+                right: 0;
+                transform: translateX(50%) translateY(25%);
+                bottom: 25%;
+            }
         }
     }
 

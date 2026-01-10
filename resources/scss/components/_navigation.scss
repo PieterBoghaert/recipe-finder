@@ -56,8 +56,8 @@
         &__menu {
             position: absolute;
             inset-block-start: 100%;
-            inset-inline-start: 0;
-            inset-inline-end: 0;
+            inset-inline-start: var(--spacing-200);
+            inset-inline-end: var(--spacing-200);
             background-color: var(--color-surface-primary);
             border-radius: var(--br-10);
             padding: var(--spacing-100);
@@ -118,47 +118,10 @@
             inline-size: 100%;
             padding-block: var(--spacing-50);
             border-radius: var(--br-10);
-            transition: all var(--transition-fast);
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                inset-inline-start: 0;
-                inset-inline-end: 0;
-                bottom: 0;
-                height: 3px;
-                background-color: var(--c-orange-500);
-                border-radius: var(--br-4);
-                inline-size: 0;
-                transition: inline-size var(--transition-base);
-            }
 
             @include breakpoint(md) {
                 display: inline-block;
                 inline-size: auto;
-            }
-
-            &:hover {
-                &::after {
-                    inline-size: 100%;
-                }
-            }
-
-            &--active {
-                position: relative;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    inset-inline-start: 0;
-                    inset-inline-end: 0;
-                    bottom: 0;
-                    height: 3px;
-                    background-color: var(--c-orange-500);
-                    border-radius: var(--br-4);
-                    inline-size: 100%;
-                }
             }
         }
 
@@ -196,6 +159,45 @@
         .navigation {
             &__logo {
                 flex-grow: 1;
+            }
+
+            &__link {
+                position: relative;
+                transition: all var(--transition-fast);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset-inline-start: 0;
+                    inset-inline-end: 0;
+                    bottom: 0;
+                    height: 3px;
+                    background-color: var(--c-orange-500);
+                    border-radius: var(--br-4);
+                    inline-size: 0;
+                    transition: inline-size var(--transition-base);
+                }
+
+                &:hover {
+                    &::after {
+                        inline-size: 100%;
+                    }
+                }
+
+                &--active {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset-inline-start: 0;
+                        inset-inline-end: 0;
+                        bottom: 0;
+                        height: 3px;
+                        background-color: var(--c-orange-500);
+                        border-radius: var(--br-4);
+                        inline-size: 100%;
+                    }
+                }
             }
         }
     }

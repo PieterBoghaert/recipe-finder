@@ -36,7 +36,7 @@ unset($__defined_vars); ?>
         
         <div class="navigation__logo">
             <a href="<?php echo e(route('home')); ?>" class="navigation__logo-link" wire:navigate>
-                <img src="<?php echo e(asset('assets/images/logo.svg')); ?>" alt="Recipe Finder" width="195" height="40">
+                <img src="<?php echo e(asset('assets/images/logo.svg')); ?>" alt="Recipe Finder" width="260" height="40">
             </a>
         </div>
         

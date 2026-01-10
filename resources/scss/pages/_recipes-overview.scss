@@ -1,21 +1,39 @@
+@use "../util" as *;
+
 @layer layout {
     .recipes-intro {
         display: flex;
         flex-direction: column;
-        text-align: center;
         gap: var(--spacing-150);
-        max-inline-size: 70ch;
         margin-inline: auto;
         margin-block-end: var(--spacing-800);
     }
 
     .recipe-list {
-        margin-block-end: var(--spacing-1200);
         &__grid {
             grid-template-columns: repeat(
                 auto-fill,
                 minmax(min(var(--card-size), 100%), 1fr)
             );
         }
+    }
+
+    .page-recipes + .footer.has-full-line {
+        border-top-width: 0;
+    }
+}
+
+@include breakpoint(lg) {
+    .recipes-intro {
+        text-align: center;
+        max-inline-size: 70ch;
+    }
+
+    .recipe-list {
+        margin-block-end: var(--spacing-1200);
+    }
+
+    .page-recipes + .footer.has-full-line {
+        border-top-width: 1px;
     }
 }
