@@ -8,6 +8,22 @@
     }
 }
 
+// Modern CSS stagger effect using sibling-index() and scroll-driven animations
+// Progressive enhancement: only when both features are supported
+// Pure CSS - no JavaScript needed!
+@supports (animation-timeline: view()) and
+    (animation-delay: calc(sibling-index() * 1s)) {
+    @media (prefers-reduced-motion: no-preference) {
+        .about-whyweexist__item,
+        .about-philosophy__item {
+            animation: fade-in-up 0.6s ease both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
+            animation-delay: calc((sibling-index() - 1) * 100ms);
+        }
+    }
+}
+
 // Animation variants
 .animate-fade-in.is-visible {
     animation: fade-in 0.6s ease-out forwards;

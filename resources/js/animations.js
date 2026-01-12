@@ -15,6 +15,28 @@ export function initScrollAnimations() {
         return;
     }
 
+    // Check if browser supports modern CSS scroll-driven animations with sibling-index() stagger
+    const supportsModernStagger =
+        CSS.supports("animation-timeline", "view()") &&
+        CSS.supports("animation-delay", "calc(sibling-index() * 1s)");
+
+    // Skip JS animations for elements that use modern CSS stagger
+    const modernStaggerSelectors = [
+        ".about-whyweexist__item",
+        ".about-philosophy__item",
+    ];
+    const skipElements = new Set();
+
+    if (supportsModernStagger) {
+        modernStaggerSelectors.forEach((selector) => {
+            document.querySelectorAll(selector).forEach((el) => {
+                skipElements.add(el);
+            });
+        });
+        // Modern browsers handle animation purely with CSS @starting-style
+        // No observer needed!
+    }
+
     // Create intersection observer
     const observer = new IntersectionObserver(
         (entries) => {
@@ -36,9 +58,12 @@ export function initScrollAnimations() {
         }
     );
 
-    // Observe all elements with animation classes
+    // Observe all elements with animation classes (except those using modern CSS)
     document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-        observer.observe(el);
+        // Skip elements that use modern CSS sibling-index() stagger
+        if (!skipElements.has(el)) {
+            observer.observe(el);
+        }
     });
 }
 

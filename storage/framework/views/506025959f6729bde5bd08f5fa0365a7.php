@@ -66,7 +66,7 @@ unset($__defined_vars); ?>
             </li>
             <li class="navigation__item">
                 <a href="<?php echo e(route('recipes')); ?>"
-                    class="navigation__link <?php echo e(request()->routeIs('recipes') ? 'navigation__link--active' : ''); ?>"
+                    class="navigation__link <?php echo e(request()->routeIs('recipes') || request()->routeIs('recipe.show') ? 'navigation__link--active' : ''); ?>"
                     wire:navigate>
                     Recipes
                 </a>

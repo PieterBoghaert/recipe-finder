@@ -5,7 +5,11 @@
         /* Container widths */
         --wrapper-size: #{rem(1192)};
         --header-wrapper-size: #{rem(1320)};
-        --wrapper-padding: var(--spacing-300);
+        --wrapper-padding: var(--spacing-200);
+
+        @include breakpoint(md) {
+            --wrapper-padding: var(--spacing-400);
+        }
 
         /* Grid */
         --grid-gap: var(--spacing-400);

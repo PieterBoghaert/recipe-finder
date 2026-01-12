@@ -38,7 +38,7 @@
             </li>
             <li class="navigation__item">
                 <a href="{{ route('recipes') }}"
-                    class="navigation__link {{ request()->routeIs('recipes') ? 'navigation__link--active' : '' }}"
+                    class="navigation__link {{ request()->routeIs('recipes') || request()->routeIs('recipe.show') ? 'navigation__link--active' : '' }}"
                     wire:navigate>
                     Recipes
                 </a>

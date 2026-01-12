@@ -17,10 +17,18 @@
                 animation-range: entry 0% cover 25%;
 
                 // Staggered effect
-                &:nth-child(2n) { animation-range: entry 5% cover 30%; }
-                &:nth-child(3n) { animation-range: entry 10% cover 35%; }
-                &:nth-child(4n) { animation-range: entry 5% cover 30%; }
-                &:nth-child(5n) { animation-range: entry 10% cover 35%; }
+                &:nth-child(2n) {
+                    animation-range: entry 5% cover 30%;
+                }
+                &:nth-child(3n) {
+                    animation-range: entry 10% cover 35%;
+                }
+                &:nth-child(4n) {
+                    animation-range: entry 5% cover 30%;
+                }
+                &:nth-child(5n) {
+                    animation-range: entry 10% cover 35%;
+                }
 
                 // On recipes overview page only: skip cards already in viewport
                 .page-recipes & {
@@ -31,14 +39,14 @@
 
                     // Tablet (800px+): skip first 2 cards
                     @media (min-width: 800px) {
-                        &:nth-child(-n+2) {
+                        &:nth-child(-n + 2) {
                             animation: none;
                         }
                     }
 
                     // Desktop (1192px+): skip first 3 cards
                     @media (min-width: 1192px) {
-                        &:nth-child(-n+3) {
+                        &:nth-child(-n + 3) {
                             animation: none;
                         }
                     }
@@ -85,10 +93,6 @@
 
             border-radius: var(--br-10);
             transition: transform var(--transition-slow);
-
-            // .recipe-card:hover & {
-            //     transform: scale(1.05);
-            // }
         }
 
         &__content {
@@ -123,8 +127,8 @@
             gap: var(--spacing-75);
 
             img {
-                inline-size: #{rem(16)};
-                block-size: #{rem(16)};
+                inline-size: var(--spacing-250);
+                block-size: var(--spacing-250);
                 flex-shrink: 0;
             }
         }
