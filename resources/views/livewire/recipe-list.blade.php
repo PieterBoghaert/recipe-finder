@@ -76,7 +76,7 @@
         <h3>No recipes found</h3>
         <p>Try adjusting your filters or search term.</p>
         @if($searchTerm || $maxPrepTime || $maxCookTime)
-        <button wire:click="clearFilters" class="navigation__button">
+        <button wire:click="clearFilters" class="btn">
             Clear Filters
         </button>
         @endif

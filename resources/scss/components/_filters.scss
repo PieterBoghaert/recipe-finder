@@ -39,14 +39,14 @@
             transition: all var(--transition-fast);
 
             &:hover {
-                border-color: var(--color-border-hover);
+                border-color: var(--c-neutral-800);
             }
 
             &:focus {
                 outline: none;
-                border-color: var(--c-primary-600);
+                border-color: var(--c-neutral-900);
                 box-shadow: 0 0 0 3px
-                    oklch(from var(--c-primary-600) l c h / 0.1);
+                    oklch(from var(--c-neutral-900) l c h / 0.1);
             }
 
             &::placeholder {
@@ -128,9 +128,9 @@
 
             // Style when select is open
             &:open {
-                border-color: var(--c-primary-600);
+                border-color: var(--c-neutral-800);
                 box-shadow: 0 0 0 3px
-                    oklch(from var(--c-primary-600) l c h / 0.1);
+                    oklch(from var(--c-neutral-800) l c h / 0.1);
             }
         }
 

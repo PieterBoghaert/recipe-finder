@@ -16,6 +16,13 @@
                 minmax(min(var(--card-size), 100%), 1fr)
             );
         }
+
+        &__empty {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-200);
+            align-items: start;
+        }
     }
 
     .page-recipes + .footer.has-full-line {

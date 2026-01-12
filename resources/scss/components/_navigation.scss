@@ -125,33 +125,9 @@
             }
         }
 
-        &__button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            inline-size: 100%;
-            padding: var(--spacing-150) var(--spacing-300);
-            background-color: var(--c-primary-600);
-            color: var(--c-white);
-            font-weight: var(--fw-semibold);
-            border-radius: var(--br-10);
-            transition: all var(--transition-fast);
-            border: none;
-            cursor: pointer;
-
-            @include breakpoint(md) {
-                inline-size: auto;
-            }
-
-            &:hover {
-                background-color: var(--c-primary-700);
-                transform: translateY(-#{rem(1)});
-                box-shadow: var(--shadow-md);
-            }
-
-            &:active {
-                transform: translateY(0);
-            }
+        .btn {
+            padding-block: var(--spacing-150);
+            padding-inline: var(--spacing-200);
         }
     }
 

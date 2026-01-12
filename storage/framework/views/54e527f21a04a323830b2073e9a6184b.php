@@ -96,7 +96,7 @@
         <h3>No recipes found</h3>
         <p>Try adjusting your filters or search term.</p>
         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($searchTerm || $maxPrepTime || $maxCookTime): ?>
-        <button wire:click="clearFilters" class="navigation__button">
+        <button wire:click="clearFilters" class="btn">
             Clear Filters
         </button>
         <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
