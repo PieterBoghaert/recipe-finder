@@ -24,3 +24,4 @@ yarn-error.log
 /starter-code
 .vercel
 .env*.local
+.env.live   
