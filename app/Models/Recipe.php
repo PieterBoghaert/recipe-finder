@@ -52,7 +52,7 @@ class Recipe extends Model
 
         return $query->where(function ($q) use ($term) {
             $q->where('title', 'LIKE', "%{$term}%")
-                ->orWhereJsonContains('ingredients', $term);
+                ->orWhere('ingredients', 'LIKE', "%{$term}%");
         });
     }
 
