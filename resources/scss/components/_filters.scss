@@ -59,8 +59,6 @@
             background-repeat: no-repeat;
             background-position: left var(--spacing-200) center;
             padding-inline-start: var(--spacing-600);
-
-            // Enable text ellipsis for placeholder
             overflow: clip;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -81,15 +79,12 @@
             background-size: #{rem(20)} #{rem(20)};
             padding-inline-end: var(--spacing-500);
 
-            // Opt-in to customizable select API
             &--custom {
                 appearance: base-select;
             }
         }
 
-        // Styles for customizable select (only apply when base-select is supported)
         &__select--custom {
-            // Style the picker dropdown
             &::picker(select) {
                 appearance: base-select;
                 background-color: var(--color-surface-primary);
@@ -100,12 +95,10 @@
                 margin-block-start: var(--spacing-50);
             }
 
-            // Style the dropdown icon
             &::picker-icon {
                 display: none;
             }
 
-            // Style options in the picker
             & option {
                 display: flex;
                 align-items: center;
@@ -119,18 +112,16 @@
                     background-color: var(--color-surface-secondary);
                 }
 
-                // Style checked options
                 &:checked {
                     background-color: var(--color-surface-secondary);
                     font-weight: var(--fw-medium);
                 }
             }
 
-            // Style when select is open
             &:open {
-                border-color: var(--c-neutral-800);
+                border-color: var(--c-neutral-300);
                 box-shadow: 0 0 0 3px
-                    oklch(from var(--c-neutral-800) l c h / 0.1);
+                    oklch(from var(--c-neutral-300) l c h / 0.1);
             }
         }
 

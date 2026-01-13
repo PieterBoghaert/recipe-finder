@@ -3,17 +3,7 @@
 @layer colors {
     :root {
         /* Primary Brand Colors - OKLCH */
-        --c-primary-950: oklch(25% 0.08 30);
-        --c-primary-900: oklch(30% 0.1 30);
-        --c-primary-800: oklch(40% 0.12 30);
-        --c-primary-700: oklch(50% 0.14 30);
-        --c-primary-600: oklch(60% 0.16 30);
         --c-primary-500: oklch(70% 0.18 30);
-        --c-primary-400: oklch(80% 0.15 30);
-        --c-primary-300: oklch(85% 0.12 30);
-        --c-primary-200: oklch(90% 0.08 30);
-        --c-primary-100: oklch(95% 0.04 30);
-        --c-primary-50: oklch(98% 0.02 30);
 
         /* Neutral Colors - OKLCH */
         --c-neutral-950: oklch(15% 0.01 270);
@@ -36,10 +26,6 @@
             var(--c-neutral-100),
             var(--c-neutral-950)
         );
-        --color-bg-secondary: light-dark(
-            var(--c-neutral-50),
-            var(--c-neutral-900)
-        );
         --color-bg-tertiary: light-dark(
             var(--c-neutral-300),
             var(--c-neutral-800)
@@ -55,26 +41,9 @@
             var(--c-neutral-300)
         );
 
-        --color-text-tertiary: light-dark(
-            var(--c-neutral-500),
-            var(--c-neutral-500)
-        );
-
-        --color-text-inverse: light-dark(var(--c-white), var(--c-neutral-900));
-
         --color-border-primary: light-dark(
             var(--c-neutral-200),
             var(--c-neutral-700)
-        );
-
-        --color-border-secondary: light-dark(
-            var(--c-neutral-300),
-            var(--c-neutral-600)
-        );
-
-        --color-border-hover: light-dark(
-            var(--c-neutral-400),
-            var(--c-neutral-500)
         );
 
         --color-surface-primary: light-dark(
@@ -85,11 +54,6 @@
         --color-surface-secondary: light-dark(
             var(--c-neutral-50),
             var(--c-neutral-800)
-        );
-
-        --color-surface-hover: light-dark(
-            var(--c-neutral-100),
-            var(--c-neutral-700)
         );
 
         /* Color scheme using modern mixins */

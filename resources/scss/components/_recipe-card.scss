@@ -9,14 +9,12 @@
         padding: var(--spacing-100);
         transition: all var(--transition-base);
 
-        // Scroll-driven animation
         @media (prefers-reduced-motion: no-preference) {
             @supports (animation-timeline: view()) {
                 animation: fade-in-up linear both;
                 animation-timeline: view();
                 animation-range: entry 0% cover 25%;
 
-                // Staggered effect
                 &:nth-child(2n) {
                     animation-range: entry 5% cover 30%;
                 }
@@ -30,21 +28,17 @@
                     animation-range: entry 10% cover 35%;
                 }
 
-                // On recipes overview page only: skip cards already in viewport
                 .page-recipes & {
-                    // Mobile: skip first card
                     &:nth-child(1) {
                         animation: none;
                     }
 
-                    // Tablet (800px+): skip first 2 cards
                     @media (min-width: 800px) {
                         &:nth-child(-n + 2) {
                             animation: none;
                         }
                     }
 
-                    // Desktop (1192px+): skip first 3 cards
                     @media (min-width: 1192px) {
                         &:nth-child(-n + 3) {
                             animation: none;

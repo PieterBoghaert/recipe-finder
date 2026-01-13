@@ -16,14 +16,7 @@
         --grid-columns: 12;
 
         /* Z-index scale */
-        --z-base: 0;
-        --z-dropdown: 100;
         --z-sticky: 200;
-        --z-fixed: 300;
-        --z-modal-backdrop: 400;
-        --z-modal: 500;
-        --z-popover: 600;
-        --z-tooltip: 700;
 
         --card-size: #{rem(360)};
     }
@@ -88,7 +81,6 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        //margin-inline: var(--spacing-200);
     }
 
     main {
