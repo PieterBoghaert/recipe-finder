@@ -56,13 +56,13 @@
             var(--c-neutral-800)
         );
 
-        /* Color scheme using modern mixins */
-        @include prefers-light {
-            color-scheme: light;
-        }
+        // /* Color scheme using modern mixins */
+        // @include prefers-light {
+        //     color-scheme: light;
+        // }
 
-        @include prefers-dark {
-            color-scheme: dark;
-        }
+        // @include prefers-dark {
+        //     color-scheme: dark;
+        // }
     }
 }
