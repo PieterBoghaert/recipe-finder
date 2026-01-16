@@ -12,12 +12,10 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('about');
 
-// Recipes Page (will use Livewire component)
-Route::get('/recipes', function () {
-    return view('pages.recipes');
-})->name('recipes');
+// Recipes Page (Livewire full-page component)
+Route::livewire('/recipes', \App\Livewire\RecipeList::class)
+    ->name('recipes');
 
-// Recipe Detail Page (will use Livewire component)
-Route::get('/recipe/{slug}', function ($slug) {
-    return view('pages.recipe', ['slug' => $slug]);
-})->name('recipe.show');
+// Recipe Detail Page (Livewire full-page component)
+Route::livewire('/recipe/{slug}', \App\Livewire\RecipeDetail::class)
+    ->name('recipe.show');

@@ -8,10 +8,10 @@
 
 @layer components {
     .recipe-detail {
-        inline-size: 100%;
-        max-inline-size: var(--wrapper-size);
-        margin-inline: auto;
-        padding-inline: var(--wrapper-padding);
+        // inline-size: 100%;
+        // max-inline-size: var(--wrapper-size);
+        // margin-inline: auto;
+        // padding-inline: var(--wrapper-padding);
 
         &__breadcrumb {
             margin-block-end: var(--spacing-200);

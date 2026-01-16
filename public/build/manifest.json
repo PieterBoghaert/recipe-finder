@@ -24,13 +24,13 @@
     "src": "public/assets/images/pattern-squiggle-2.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BaN9lLw0.js",
+    "file": "assets/app-B6lYppfj.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-DapEwiYY.css",
+    "file": "assets/app-BkXyxFwc.css",
     "src": "resources/scss/app.scss",
     "isEntry": true
   }

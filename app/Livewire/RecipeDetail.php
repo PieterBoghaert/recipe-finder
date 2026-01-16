@@ -4,7 +4,9 @@ namespace App\Livewire;
 
 use App\Models\Recipe;
 use Livewire\Component;
+use Livewire\Attributes\Layout;
 
+#[Layout('layouts.app', ['pageClass' => 'page-recipe'])]
 class RecipeDetail extends Component
 {
     public Recipe $recipe;
@@ -12,6 +14,11 @@ class RecipeDetail extends Component
     public function mount($slug)
     {
         $this->recipe = Recipe::where('slug', $slug)->firstOrFail();
+    }
+
+    public function title()
+    {
+        return $this->recipe->title . ' - Recipe Finder';
     }
 
     public function getRelatedRecipesProperty()

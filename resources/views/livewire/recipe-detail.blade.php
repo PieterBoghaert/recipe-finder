@@ -1,4 +1,4 @@
-<div class="recipe-detail">
+<div class="recipe-detail wrapper">
     {{-- Breadcrumb --}}
     <div class="recipe-detail__breadcrumb">
         <a href="{{ route('recipes') }}" wire:navigate>Recipes</a>
@@ -71,7 +71,7 @@
     @if($relatedRecipes->count() > 0)
     <div class="recipe-detail__related">
         <h3 class="recipe-detail__related-title">More recipes</h3>
-        <div class="grid grid--cols-3 recipe-detail__related-grid">
+        <div class="grid recipe-detail__related-grid">
             @foreach($relatedRecipes as $relatedRecipe)
             <x-recipe-card :recipe="$relatedRecipe" />
             @endforeach

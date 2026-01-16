@@ -6,7 +6,11 @@ use App\Models\Recipe;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Url;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 
+#[Layout('layouts.app', ['pageClass' => 'page-recipes'])]
+#[Title('Recipes - Recipe Finder')]
 class RecipeList extends Component
 {
     use WithPagination;
