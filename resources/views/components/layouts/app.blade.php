@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Discover quick, whole-food recipes that anyone can master—no fancy equipment, no ultra-processed shortcuts—just honest ingredients and straightforward steps.">
     <meta name="author" content="Boghaert Pieter">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon-32x32.png') }}">
 
     {{-- Page Title --}}
