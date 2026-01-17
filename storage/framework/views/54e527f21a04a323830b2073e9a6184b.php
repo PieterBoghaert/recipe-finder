@@ -6,8 +6,8 @@
 
     <div class="recipe-list wrapper">
         
-        <div class="filters">
-
+        <form class="filters">
+            <?php echo csrf_field(); ?>
 
             <div class="filters__group">
                 <label for="maxPrepTime" class="filters__label sr-only">Max Prep Time</label>
@@ -63,7 +63,7 @@
                     class="filters__input">
             </div>
 
-        </div>
+        </form>
 
         
         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($recipes->count() > 0): ?>

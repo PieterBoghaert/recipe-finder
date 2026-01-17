@@ -6,8 +6,8 @@
 
     <div class="recipe-list wrapper">
         {{-- Filters Section --}}
-        <div class="filters">
-
+        <form class="filters">
+            @csrf
 
             <div class="filters__group">
                 <label for="maxPrepTime" class="filters__label sr-only">Max Prep Time</label>
@@ -63,7 +63,7 @@
                     class="filters__input">
             </div>
 
-        </div>
+        </form>
 
         {{-- Recipe Grid --}}
         @if($recipes->count() > 0)
