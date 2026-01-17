@@ -50,9 +50,12 @@ class Recipe extends Model
             return $query;
         }
 
-        return $query->where(function ($q) use ($term) {
-            $q->where('title', 'LIKE', "%{$term}%")
-                ->orWhere('ingredients', 'LIKE', "%{$term}%");
+        // Use ILIKE for PostgreSQL (case-insensitive), LIKE for others
+        $operator = config('database.default') === 'pgsql' ? 'ILIKE' : 'LIKE';
+
+        return $query->where(function ($q) use ($term, $operator) {
+            $q->where('title', $operator, "%{$term}%")
+                ->orWhere('ingredients', $operator, "%{$term}%");
         });
     }
 
