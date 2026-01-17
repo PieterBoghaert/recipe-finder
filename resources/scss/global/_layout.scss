@@ -129,4 +129,24 @@
             contain: layout;
         }
     }
+
+    // ::view-transition-old(recipe) {
+    //     animation: 300ms ease-out slide-out;
+    // }
+
+    // ::view-transition-new(recipe) {
+    //     animation: 300ms ease-in slide-in;
+    // }
+
+    // @keyframes slide-out {
+    //     to {
+    //         transform: translateX(-100%);
+    //     }
+    // }
+
+    // @keyframes slide-in {
+    //     from {
+    //         transform: translateX(100%);
+    //     }
+    // }
 }

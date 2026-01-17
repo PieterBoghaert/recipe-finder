@@ -67,7 +67,7 @@
 
         {{-- Recipe Grid --}}
         @if($recipes->count() > 0)
-        <div class="grid recipe-list__grid">
+        <div class="grid recipe-list__grid" wire:transition>
             @foreach($recipes as $recipe)
             <x-recipe-card :recipe="$recipe" />
             @endforeach
